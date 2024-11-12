@@ -45,3 +45,28 @@
   @apply bg-clip-text text-transparent;
   @apply bg-gradient-to-br from-indigo-400 via-fuchsia-200 to-[#9ACC00];
 }
+
+.fade-slide-up {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeSlideUp 0.5s ease forwards 0.15s;
+}
+
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards 0.2s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+

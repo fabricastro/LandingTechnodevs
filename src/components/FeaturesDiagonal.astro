@@ -1,0 +1,177 @@
+---
+import { InvitationModal } from "./InvitationModal";
+import featuresdiagonal from "../assets/images/featuresdiagonal.jpg";
+import project1 from "../assets/images/portfolio4.webp";
+import project2 from "../assets/images/portfolio6.webp";
+import project3 from "../assets/images/portfolio2.png";
+
+// Lista de proyectos
+const projects = [
+  {
+    title: "Project One",
+    description: "Description of Project One",
+    image: project1,
+    category: "Web Development",
+  },
+  {
+    title: "Project Two",
+    description: "Description of Project Two",
+    image: project2,
+    category: "App Development",
+  },
+  {
+    title: "Project Three",
+    description: "Description of Project Three",
+    image: project3,
+    category: "Design",
+  },
+];
+---
+
+<section
+  class="lg:mb-16 w-full flex flex-col justify-center items-center bg-bgDark1"
+>
+  <div class="shape-divider-bottom-1665696614">
+    <svg
+      data-name="Layer 1"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1200 120"
+      preserveAspectRatio="none"
+      class="bg-bgDark2 fill-bgDark2"
+    >
+      <path
+        d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+        class="bg-bgDark1 fill-bgDark1"></path>
+    </svg>
+  </div>
+
+  <!-- Título de la sección -->
+  <div
+    class="fade-in-animation 2xl:w-[1150px] xl:w-[1050px] md:w-4/5 flex justify-center bg-bgDark1 pt-8 lg:pt-14 mx-auto lg:flex-row flex-col"
+  >
+    <div class="w-3/4 lg:w-1/2 flex flex-col lg:mx-unset mx-auto">
+      <span class="block-subtitle text-center">El trabajo que nos respalda</span
+      >
+      <h2 class="mt-10 mb-8 text-4xl lg:text-5xl block-big-title text-center">
+        Proyectos
+      </h2>
+    </div>
+  </div>
+
+  <!-- Selector de categoría -->
+  <div class="w-full max-w-screen-lg px-4 mb-8 flex justify-center space-x-4">
+    <button class="filter-button" data-category="All">Todo</button>
+    <button class="filter-button" data-category="Web Development"
+      >Desarrollo Web</button
+    >
+    <button class="filter-button" data-category="App Development"
+      >Desarrollo de Apps</button
+    >
+    <button class="filter-button" data-category="Design">Diseño</button>
+  </div>
+
+  <!-- Galería de Proyectos Filtrada -->
+  <div
+    id="project-gallery"
+    class="w-full max-w-screen-lg mx-auto my-12 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4"
+  >
+    {
+      projects.map((project) => (
+        <div
+          class="bg-bgDark2 border border-gray-600 rounded-lg overflow-hidden shadow-lg project-card"
+          data-category={project.category}
+        >
+          <img
+            src={project.image.src}
+            alt={project.title}
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-xl font-semibold text-white mb-2">
+              {project.title}
+            </h3>
+            <p class="text-secondaryText">{project.description}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="shape-divider-top-1665696661 w-full">
+    <svg
+      data-name="Layer 1"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1200 120"
+      preserveAspectRatio="none"
+      class="bg-bgDark2 fill-bgDark2"
+    >
+      <path
+        d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+        class="bg-bgDark1 fill-bgDark1"></path>
+    </svg>
+  </div>
+</section>
+
+<!-- Script para manejar el cambio de categoría y filtrado -->
+<script>
+  const buttons = document.querySelectorAll(".filter-button");
+  const projects = document.querySelectorAll(".project-card");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const selectedCategory = button.getAttribute("data-category");
+
+      projects.forEach((project) => {
+        const projectCategory = project.getAttribute("data-category");
+        if (
+          selectedCategory === "All" ||
+          projectCategory === selectedCategory
+        ) {
+          project.style.display = "block";
+        } else {
+          project.style.display = "none";
+        }
+      });
+
+      // Actualiza los estilos de los botones para indicar el seleccionado
+      buttons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+    });
+  });
+</script>
+
+<style>
+  .project-card {
+    background-color: #222;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+  }
+
+  .project-card:hover {
+    transform: scale(1.05);
+  }
+
+  .project-card img {
+    width: 100%;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+
+  .filter-button {
+    background-color: #444;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .filter-button:hover {
+    background-color: #666;
+  }
+
+  .filter-button.active {
+    background-color: #007bff;
+  }
+</style>
