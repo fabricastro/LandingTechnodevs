@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import { Hero } from '../components/Hero.jsx'
-import { Navbar } from '../components/Navbar.jsx'
 import { Features1 } from '../components/Features1.jsx'
 import { Features2 } from '../components/Features2.jsx'
 import { Testimonials } from '../components/Testimonials.jsx'
@@ -15,12 +14,11 @@ import { ScrollUpButton } from '../components/ScrollUpButton'
 import  Splash  from '../components/splash.astro'
 import '../styles/Theme.css'
 import '../styles/Diagonals.css'
+import Navbar from '../components/Navbar.astro'
 ---
 
 <Layout title="Technodevs">
-  <Navbar client:load />
   <Splash />
-  <!-- <Hero client:load /> -->
   <Features1 client:load />
   <!-- <Features2 client:load /> -->
   <FeaturesDiagonal client:load />
@@ -29,6 +27,4 @@ import '../styles/Diagonals.css'
   <Testimonials client:load />
   <Blog client:load />
   <FAQ client:load /> 
-  <Footer />
-  <ScrollUpButton client:load />
 </Layout>

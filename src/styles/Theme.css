@@ -41,7 +41,9 @@
 @font-face {
   font-display: var(--fontsource-Inter-font-display, optional);
 }
+
 .gradient-text {
   @apply bg-clip-text text-transparent;
-  @apply bg-gradient-to-br from-indigo-400 via-fuchsia-200 to-[#9ACC00];
+  background-image: linear-gradient(to right, #818cf8, #c7d2fe 50%, #bcee22 140%);
 }
+
