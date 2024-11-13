@@ -15,12 +15,25 @@ import { ScrollUpButton } from '../components/ScrollUpButton'
 import  Splash  from '../components/splash.astro'
 import '../styles/Theme.css'
 import '../styles/Diagonals.css'
+import { useStoryblokApi } from '@storyblok/astro'
+
+import StoryGrid from '../components/StoryGrid.astro'
+
+const storyblokApi = useStoryblokApi()
+const { data } = await storyblokApi.get('cdn/stories', {
+  version: 'draft',
+  starts_with: 'project', // Puedes cambiarlo según la ruta donde guardes tus stories
+})
+
+const stories = data.stories
 ---
 
-<Layout title="Technodevs">
+<Layout title="Desarrollo Web, Software a Medida y Redes Sociales">
   <Navbar client:load />
   <Splash />
   <Features1 />
+  <StoryGrid stories={stories} />
+  <div>{stories.feature}</div>
   <FeaturesDiagonal />
   <Pricing client:load />
   <Brands client:load />
