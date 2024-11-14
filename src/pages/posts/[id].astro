@@ -1,0 +1,44 @@
+---
+// src/pages/posts/[id].astro
+import { Navbar } from "../../components/Navbar";
+import Layout from "../../layouts/Layout.astro";
+import { fetchBlogPosts, fetchPostById } from "../../service/BlogService";
+export async function getStaticPaths() {
+    // Obtiene todos los posts para generar las rutas
+    const posts = await fetchBlogPosts();
+
+    return posts.map((post) => ({
+        params: { id: post.id.toString() }, // Asegúrate de que `id` sea una cadena
+    }));
+}
+
+// Obtiene el `id` de los parámetros de la URL
+const { id } = Astro.params;
+
+// Llama a la función `fetchPostById` para obtener los datos del post específico
+const post = await fetchPostById(id);
+
+if (!post) {
+    throw new Error("Post no encontrado");
+}
+---
+
+<Layout title={post.title}>
+    <Navbar client:load />
+    <article class="bg-bgDark2">
+        <div class="container mx-auto px-24 py-28 flex flex-col">
+            <h1 class="text-4xl font-bold mb-4 text-white py-2">
+                {post.title}
+            </h1>
+            <img
+                src={post.image}
+                alt={post.title}
+                class="rounded mb-4 w-full h-auto object-cover"
+            />
+            <div
+                class="text-lg text-secondaryText py-2 flex flex-col gap-4"
+                set:html={post.content}
+            />
+        </div>
+    </article>
+</Layout>
