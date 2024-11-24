@@ -4,7 +4,7 @@ import { loadEnv } from 'vite'
 import tailwind from "@astrojs/tailwind"
 import basicSsl from '@vitejs/plugin-basic-ssl'
 import react from '@astrojs/react';
-import vercel from '@astrojs/vercel'; // Añade esta línea
+import vercel from '@astrojs/vercel/static';
 
 const env = loadEnv("", process.cwd(), 'STORYBLOK')
 
@@ -31,6 +31,11 @@ export default defineConfig({
     server: {
       https: true,
     },
+    resolve: {
+      alias: {
+        "@components": "/src/components",
+      },
+    }
   },
   adapter: vercel(),
 })
