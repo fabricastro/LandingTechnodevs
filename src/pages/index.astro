@@ -4,8 +4,8 @@ import { Hero } from '../components/Hero.jsx'
 import Features1 from '../components/Features1.astro'
 import { Features2 } from '../components/Features2.jsx'
 import { Testimonials } from '../components/Testimonials.jsx'
-import FeaturesDiagonal from '../components/FeaturesDiagonal.astro'
-import { Pricing } from '../components/Pricing.jsx'
+import FeaturesDiagonal from '../components/FeaturesDiagonal.jsx'
+import Pricing  from '../components/Pricing.astro'
 import { FAQ } from '../components/FAQ.jsx'
 import { Brands } from '../components/Brands.jsx'
 import Blog  from '../components/Blog.astro'
@@ -21,8 +21,8 @@ import Navbar from '../components/Navbar.astro'
   <Splash />
   <Features1 />
   <!-- <Features2 client:load /> -->
-  <FeaturesDiagonal />
-  <Pricing client:load />
+  <FeaturesDiagonal client:load />
+  <Pricing />
   <Brands client:load />
   <Testimonials client:load />
   <Blog />

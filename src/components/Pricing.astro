@@ -1,0 +1,104 @@
+---
+import { CheckArrowIcon } from "../assets/icons/CheckArrowIcon";
+
+import plans from "../data/plan.json";
+---
+
+<section class="w-screen flex justify-center bg-bgDark2 relative">
+  <div class="absolute -top-16" id="pricing"></div>
+  <div class="pb-20 pt-12 bg-bgDark2 2xl:w-[1150px] lg:w-[1050px] md:w-4/5">
+    <div class="container mx-auto px-4">
+      <!-- Título y Selector -->
+      <div class="max-w-2xl mx-auto text-center mb-16">
+        <span class="block-subtitle">Encontrá el plan que se adapte a vos</span>
+        <h2 class="mt-6 mb-6 text-4xl lg:text-5xl font-bold font-heading text-primaryText">
+          Mira nuestros planes
+        </h2>
+        <p class="mb-6 text-secondaryText">Selecciona el plan que se adapte a vos</p>
+        <div class="toggle-wrapper flex justify-center items-center space-x-4">
+          <button class="toggle-button active" id="webToggle" data-type="web">Diseño Web</button>
+          <button class="toggle-button" id="socialToggle" data-type="social">Redes</button>
+        </div>
+      </div>
+
+      <!-- Planes -->
+      <div id="plansContainer" class="flex flex-wrap flex-col lg:flex-row -mx-4 items-center mt-20">
+        {plans.map((plan) => (
+          <div
+            class="plan-card w-[350px] sm:w-[380px] lg:w-1/3 px-4 mb-8 lg:mb-0"
+            data-type={plan.type}
+            data-plan={plan.plan}
+          >
+            <div class="p-8 bg-bgDark3 rounded-3xl">
+              <h3 class="mb-2 text-xl font-bold font-heading text-primaryText text-left">
+                {plan.title}
+              </h3>
+              <div class="flex justify-start items-end">
+                <div class="text-4xl sm:text-5xl font-bold text-primaryText text-left mt-4 mr-2">
+                  {plan.price}
+                </div>
+                <div class="text-gray-500">/ proyecto</div>
+              </div>
+              <p class="mt-4 mb-6 text-gray-500 leading-loose text-left">{plan.description}</p>
+              <ul class="mb-2 text-primaryText">
+                {plan.features.map((feature, index) => (
+                  <li class="mb-4 flex" key={`${plan.plan}-${index}`}>
+                    <CheckArrowIcon />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const webToggle = document.getElementById("webToggle");
+  const socialToggle = document.getElementById("socialToggle");
+  const planCards = document.querySelectorAll(".plan-card");
+
+  webToggle.addEventListener("click", () => {
+    webToggle.classList.add("active");
+    socialToggle.classList.remove("active");
+    planCards.forEach((card) => {
+      card.style.display = card.dataset.type === "web" ? "block" : "none";
+    });
+  });
+
+  socialToggle.addEventListener("click", () => {
+    socialToggle.classList.add("active");
+    webToggle.classList.remove("active");
+    planCards.forEach((card) => {
+      card.style.display = card.dataset.type === "social" ? "block" : "none";
+    });
+  });
+</script>
+
+<style>
+  .toggle-button {
+    padding: 0.5rem 1rem;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .toggle-button.active {
+    background-color: #007bff;
+    font-weight: bold;
+  }
+
+  .plan-card {
+    display: none;
+  }
+
+  .plan-card[data-type="web"] {
+    display: block;
+  }
+</style>

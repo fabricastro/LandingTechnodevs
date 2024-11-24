@@ -1,6 +1,3 @@
-// src/service/BlogService.js
-
-// Función para obtener una lista de publicaciones por categoría
 export async function fetchBlogPosts() {
     try {
         const response = await fetch(`https://technodevs.com.ar/wp-json/wp/v2/posts?categories=1&per_page=5`);
