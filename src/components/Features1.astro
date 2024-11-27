@@ -10,50 +10,55 @@ import feature4 from "../assets/images/code.webp";
 import feature5 from "../assets/images/centerpadel.png";
 ---
 
-<section class="w-full bg-bgDark2 pt-24 mb-8 sm:mb-24 md:pt-[12vw] lg:pt-16">
+<section class="w-full bg-bgDark2 pt-24 mb-8 sm:mb-24 md:pt-[12vw] lg:pt-16 z-20 relative">
   <div class="w-screen flex justify-center relative">
     <div
-      class="w-11/12 sm:w-4/5 lg:w-[90%] xl:w-[80%] 2xl:w-[1200px] mx-auto grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 z-10 rounded-xl main-border-gray hero-dashboard-border-gradient bg-bgDark1 bg-opacity-50 backdrop-blur-sm mt-[-50px] lg:mt-[-150px] xl:mt-[-250px]"
+      class="w-11/12 sm:w-4/5 lg:w-[90%] xl:w-[80%] 2xl:w-[1200px] mx-auto grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 z-10 rounded-xl mt-[-50px] lg:mt-[-150px] xl:mt-[-250px]"
       id="features"
     >
-      <div
-        class="p-4 flex flex-col gap-4 border-primaryText border rounded-xl m-4 bg-blackPrimary"
-      >
-        <TfiWorld className="text-5xl text-greenPrimary" />
-        <h4 class="text-greenPrimary text-xl text-left">Desarrollo web</h4>
-        <p class="text-primaryText text-left">
-          Creamos sitios web modernos, rápidos y seguros. Diseñados a medida
-          para potenciar tu negocio y ofrecer la mejor experiencia a tus
-          usuarios.
-        </p>
-      </div>
-      <div
-        class="p-4 flex flex-col gap-4 border-primaryText border rounded-xl m-4 bg-blackPrimary"
-      >
-        <CiMonitor className="text-5xl text-greenPrimary" />
-        <h4 class="text-greenPrimary text-xl text-left">Software a Medida</h4>
-        <p class="text-primaryText text-left">
-          Soluciones de software adaptadas a tus necesidades específicas.
-          Optimiza procesos y mejora la eficiencia de tu empresa con nuestras
-          aplicaciones a medida.
-        </p>
-      </div>
-      <div
-        class="p-4 flex flex-col gap-4 border-primaryText border rounded-xl m-4 bg-blackPrimary"
-      >
-        <IoMdPhotos className="text-5xl text-greenPrimary" />
-        <h4 class="text-greenPrimary text-xl text-left">Redes Sociales</h4>
-        <p class="text-primaryText text-left">
-          Impulsa tu marca con estrategias de redes sociales efectivas. Aumenta
-          tu alcance y conecta con tu audiencia de manera auténtica y
-          significativa.
-        </p>
-      </div>
+    <div
+    class="hover:cursor-pointer p-6 flex flex-col items-center gap-6 rounded-3xl bg-gradient-to-r from-gray-950 to-gray-800 transition-transform duration-300 ease-in-out h-[350px] shadow-[0_0_50px_0_rgba(200,200,200,0.2)]"
+  >
+    <TfiWorld className="text-6xl text-primaryText" />
+    <h4 class="text-[#ddff53] text-2xl font-semibold text-center">
+      Desarrollo web
+    </h4>
+    <p class="text-primaryText text-center text-base">
+      Creamos sitios web modernos, rápidos y seguros. Diseñados a medida para
+      potenciar tu negocio y ofrecer la mejor experiencia a tus usuarios.
+    </p>
+  </div>
+  <div
+    class="p-6 flex flex-col items-center gap-6 rounded-3xl bg-gradient-to-b hover:cursor-pointer from-gray-800 to-gray-950 transition-transform duration-300 ease-in-out mt-7 h-[350px] shadow-[0_0_50px_0_rgba(200,200,200,0.2)]"
+  >
+    <CiMonitor className="text-6xl text-primaryText" />
+    <h4 class="text-[#ddff53] text-2xl font-semibold text-center">
+      Software a Medida
+    </h4>
+    <p class="text-primaryText text-center text-base">
+      Soluciones de software adaptadas a tus necesidades específicas. Optimiza
+      procesos y mejora la eficiencia de tu empresa con nuestras aplicaciones a
+      medida.
+    </p>
+  </div>
+  <div
+    class="hover:cursor-pointer p-6 flex flex-col items-center gap-6
+      rounded-3xl bg-gradient-to-r from-gray-800 to-black transition-transform duration-300 ease-in-out h-[350px] shadow-[0_0_50px_0_rgba(200,200,200,0.2)]"
+  >
+    <IoMdPhotos className="text-6xl text-primaryText" />
+    <h4 class="text-[#ddff53] text-2xl font-semibold text-center">
+      Redes Sociales
+    </h4>
+    <p class="text-primaryText text-center text-base">
+      Impulsa tu marca con estrategias de redes sociales efectivas. Aumenta tu
+      alcance y conecta con tu audiencia de manera auténtica y significativa.
+    </p>
+  </div>  
     </div>
   </div>
 
   <div
-    class="flex flex-wrap items-center 2xl:w-[1450px] xl:w-[1300px] w-11/12 mx-auto md:pl-4 xl:pr-16 xl:pl-16 pt-28 xl:pt-[100px]"
+    class="hover:cursor-pointer flex flex-wrap items-center 2xl:w-[1450px] xl:w-[1300px] w-11/12 mx-auto md:pl-4 xl:pr-16 xl:pl-16 pt-28 xl:pt-[100px]"
     id="about"
   >
     <div class="w-full lg:w-1/2 mb-12 lg:mb-0">

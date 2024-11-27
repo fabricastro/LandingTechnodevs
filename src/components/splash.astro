@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import astronautImage from "../assets/images/astronaut.png";
-import HeroImage from "../components/hero-image.astro";
 import Starfield from "../components/starfield.astro";
 
 const widths = [450, 800];
@@ -10,9 +9,9 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
 
 <section class="relative h-full bg-black py-10">
     <Starfield />
-    <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-10">
+    <!-- <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-10">
         <HeroImage />
-    </div>
+    </div> -->
     <div class="relative grid h-full place-items-center sm:grid-cols-2">
         <h2
             class="flex flex-col items-center gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
@@ -38,21 +37,23 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
             />
         </div>
     </div>
-    <div class="relative w-screen justify-center mb-[-42px]">
-        <div class="">
+    <div class="relative w-screen justify-center mb-[-42px] custom-shadow z-10">
             <svg
                 data-name="Layer 1"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 1200 120"
                 preserveAspectRatio="none"
-                class="w-full "
+                class="w-full"
             >
                 <path
                     d="M0,0 L600,100 L1200,0 L1200,120 L0,120 Z"
-                    class="bg-bgDark2 fill-bgDark2 border-2 border-white"></path>
+                    class="bg-bgDark2 fill-bgDark2"
+                    filter="url(#dropShadowExternal)"
+                ></path>
             </svg>
-        </div>
     </div>
+    
+    
 </section>
 
 <noscript>
@@ -60,10 +61,15 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
         #splash-bg-fallback {
             display: block;
         }
+
     </style>
 </noscript>
 
 <style>
+    
+    .custom-shadow {
+        filter: drop-shadow(0 -1mm 10mm rgb(200, 200, 200, 0.4));
+    }
     @keyframes float {
         0% {
             transform: translate3d(0, 0, 0);
