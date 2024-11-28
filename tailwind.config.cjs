@@ -19,7 +19,21 @@ module.exports = {
         mainBorderDarker: "rgb(255,255,255,0.07)",
         quoteIconColor: "rgb(178, 184, 205)",
         greenPrimary: "#9ACC00",
-        blackPrimary: "#121312"
+        blackPrimary: "#121312",
+        secondary: {
+        '50': '#faf6fe',
+        '100': '#f2eafd',
+        '200': '#e7d9fb',
+        '300': '#d5bcf6',
+        '400': '#bb90f0',
+        '500': '#a165e7',
+        '600': '#8b46d7',
+        '700': '#7633bd',
+        '800': '#652f9a',
+        '900': '#53277c',
+        '950': '#2e0e4d',
+    },
+    
       },
       fontFamily: {
         Inter: "Inter",

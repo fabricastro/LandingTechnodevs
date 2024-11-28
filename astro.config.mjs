@@ -29,7 +29,7 @@ export default defineConfig({
   vite: {
     plugins: [basicSsl()],
     server: {
-      https: true,
+      https: false,
     },
     resolve: {
       alias: {
@@ -38,4 +38,7 @@ export default defineConfig({
     }
   },
   adapter: vercel(),
+  devToolbar: {
+    enabled: true
+  }
 })

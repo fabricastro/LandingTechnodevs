@@ -7,9 +7,10 @@ import feature2 from "../assets/images/cohete.webp";
 import feature3 from "../assets/images/pc-ia.webp";
 import feature4 from "../assets/images/code.webp";
 import feature5 from "../assets/images/centerpadel.png";
+
 ---
 
-<section class="w-full bg-blackPrimary pt-24 mb-8 sm:mb-24 md:pt-[12vw] lg:pt-16 z-20 relative">
+<section class="w-full section-with-glow pt-24 md:pt-[12vw] lg:pt-16 z-20 relative border-b-[1px] border-bgDark3 section-shadow">
   <div class="w-screen flex justify-center relative">
     <div
       class="w-11/12 sm:w-4/5 lg:w-[90%] xl:w-[80%] 2xl:w-[1200px] mx-auto grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 z-10 rounded-xl mt-[-50px] lg:mt-[-150px] xl:mt-[-250px]"
@@ -56,12 +57,12 @@ import feature5 from "../assets/images/centerpadel.png";
   </div>
 
   <div
-    class="hover:cursor-pointer flex flex-wrap items-center 2xl:w-[1450px] xl:w-[1300px] w-11/12 mx-auto md:pl-4 xl:pr-16 xl:pl-16 pt-28 xl:pt-[100px]"
+    class="flex flex-wrap items-center 2xl:w-[1450px] xl:w-[1300px] w-11/12 mx-auto md:pl-4 xl:pr-16 xl:pl-16 py-28 xl:pt-[100px]"
     id="about"
   >
     <div class="w-full lg:w-1/2 mb-12 mt-32 lg:mb-0">
       <div class="mx-auto lg:mx-auto w-11/12 sm:w-4/5 md:w-3/4 lg:w-unset">
-        <span class="block-subtitle">Embrace Innovation</span>
+        <span class="block-subtitle">Abrazando la Innovación</span>
         <h2 class="mt-6 mb-8 text-4xl lg:text-5xl block-big-title">
           Agencia Technodevs
         </h2>
@@ -80,7 +81,7 @@ import feature5 from "../assets/images/centerpadel.png";
           seguimos tendencias, las creamos, siempre enfocados en generar un
           impacto significativo.
         </p>
-        <a href="#FAQ" class="w-[210px] h-12 contained-button mr-10">
+        <a href="#FAQ" class="w-[210px] h-12 contained-button bg-secondary-950 mr-10">
           Contáctanos
         </a>
       </div>
@@ -172,4 +173,21 @@ import feature5 from "../assets/images/centerpadel.png";
   .custom-shadow {
         filter: drop-shadow(0 0 3mm rgb(221,255,83, 0.5));
     }
+
+    .section-with-glow {
+  background: 
+    radial-gradient(600px circle at 10% 60%, rgba(221, 255, 83, 0.2), transparent 60%),
+    radial-gradient(500px circle at 80% 70%, rgba(156,158,239, 0.2), transparent 70%),
+    #121312;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.section-shadow{
+  -webkit-box-shadow: 0px 24px 22px -30px rgba(255,255,255,1);
+-moz-box-shadow: 0px 24px 22px -30px rgba(255,255,255,1);
+box-shadow: 0px 24px 22px -30px rgba(255,255,255,.2)
+}
+
 </style>
