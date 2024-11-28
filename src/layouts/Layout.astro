@@ -1,10 +1,4 @@
 ---
-import "@fontsource/inter";
-import "@fontsource/inter/500.css";
-import "@fontsource/inter/600.css";
-import "@fontsource/inter/700.css";
-import "@fontsource/inter/800.css";
-import "@fontsource/inter/900.css";
 import Navbar from "../components/Navbar.astro";
 import { Footer } from "../components/Footer";
 
@@ -27,14 +21,82 @@ const { title } = Astro.props;
       content="Creamos sitios web modernos, rápidos y seguros. Diseñados a medida para potenciar tu negocio y ofrecer la mejor experiencia a tus usuarios."
     />
     <title>{title}</title>
+    <link
+      rel="preload"
+      href="/fonts/Inter_18pt-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/Inter_18pt-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/Inter_24pt-ExtraBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/Inter_18pt-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
   </head>
   <body class="bg-bgDark2">
     <main aria-label="Main content">
-      <Navbar/>
+      <Navbar />
       <slot />
       <Footer />
     </main>
     <style is:global>
+      @font-face {
+        font-family: "Inter";
+        src: url("/fonts/Inter_18pt-Bold.woff2") format("woff2");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Inter";
+        src: url("/fonts/Inter_18pt-Regular.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Inter";
+        src: url("/fonts/Inter_18pt-Medium.woff2") format("woff2");
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Inter";
+        src: url("/fonts/Inter_24pt-ExtraBold.woff2") format("woff2");
+        font-weight: 800;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Inter";
+        src: url("/fonts/Inter_18pt-Light.woff2") format("woff2");
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
+
       html {
         font-family: Inter;
         background-color: #26272b;
