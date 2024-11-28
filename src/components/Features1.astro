@@ -9,7 +9,7 @@ import feature4 from "../assets/images/code.webp";
 import feature5 from "../assets/images/centerpadel.png";
 ---
 
-<section class="w-full bg-bgDark1 pt-24 mb-8 sm:mb-24 md:pt-[12vw] lg:pt-16 z-20 relative">
+<section class="w-full bg-blackPrimary pt-24 mb-8 sm:mb-24 md:pt-[12vw] lg:pt-16 z-20 relative">
   <div class="w-screen flex justify-center relative">
     <div
       class="w-11/12 sm:w-4/5 lg:w-[90%] xl:w-[80%] 2xl:w-[1200px] mx-auto grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 z-10 rounded-xl mt-[-50px] lg:mt-[-150px] xl:mt-[-250px]"
@@ -19,7 +19,7 @@ import feature5 from "../assets/images/centerpadel.png";
         class="feature-card hover:cursor-pointer p-6 flex flex-col items-center gap-6 rounded-3xl backdrop-blur-lg duration-300 ease-in-out h-[350px] shadow-[0_0_50px_0_rgba(200,200,200,0.1)] bg-[rgba(200,200,200,0.2)] main-border-gray-darker mb-4 relative cursor-pointer transition opacity-0 transform translate-y-10"
       >
         <TfiWorld className="text-6xl text-primaryText" />
-        <h4 class="text-[#ddff53] text-2xl font-semibold text-center">
+        <h4 class="text-[#ddff53] text-2xl font-semibold text-center custom-shadow">
           Desarrollo web
         </h4>
         <p class="text-primaryText text-center text-base">
@@ -31,7 +31,7 @@ import feature5 from "../assets/images/centerpadel.png";
         class="feature-card hover:cursor-pointer p-6 flex flex-col items-center gap-6 rounded-3xl mt-12 backdrop-blur-lg duration-300 ease-in-out h-[350px] shadow-[0_0_50px_0_rgba(200,200,200,0.1)] bg-[rgba(200,200,200,0.2)] main-border-gray-darker mb-4 relative cursor-pointer transition opacity-0 transform translate-y-10"
       >
         <CiMonitor className="text-6xl text-primaryText" />
-        <h4 class="text-[#ddff53] text-2xl font-semibold text-center">
+        <h4 class="text-[#ddff53] text-2xl font-semibold text-center custom-shadow">
           Software a Medida
         </h4>
         <p class="text-primaryText text-center text-base">
@@ -44,7 +44,7 @@ import feature5 from "../assets/images/centerpadel.png";
         class="feature-card hover:cursor-pointer p-6 flex flex-col items-center gap-6 rounded-3xl backdrop-blur-lg duration-300 ease-in-out h-[350px] shadow-[0_0_50px_0_rgba(200,200,200,0.1)] bg-[rgba(200,200,200,0.2)] main-border-gray-darker mb-4 relative cursor-pointer transition opacity-0 transform translate-y-10"
       >
         <IoMdPhotos className="text-6xl text-primaryText" />
-        <h4 class="text-[#ddff53] text-2xl font-semibold text-center">
+        <h4 class="text-[#ddff53] text-2xl font-semibold text-center custom-shadow">
           Redes Sociales
         </h4>
         <p class="text-primaryText text-center text-base">
@@ -59,7 +59,7 @@ import feature5 from "../assets/images/centerpadel.png";
     class="hover:cursor-pointer flex flex-wrap items-center 2xl:w-[1450px] xl:w-[1300px] w-11/12 mx-auto md:pl-4 xl:pr-16 xl:pl-16 pt-28 xl:pt-[100px]"
     id="about"
   >
-    <div class="w-full lg:w-1/2 mb-12 lg:mb-0">
+    <div class="w-full lg:w-1/2 mb-12 mt-32 lg:mb-0">
       <div class="mx-auto lg:mx-auto w-11/12 sm:w-4/5 md:w-3/4 lg:w-unset">
         <span class="block-subtitle">Embrace Innovation</span>
         <h2 class="mt-6 mb-8 text-4xl lg:text-5xl block-big-title">
@@ -168,4 +168,8 @@ import feature5 from "../assets/images/centerpadel.png";
     opacity: 0;
     transform: translateY(50px);
   }
+
+  .custom-shadow {
+        filter: drop-shadow(0 0 3mm rgb(221,255,83, 0.5));
+    }
 </style>
