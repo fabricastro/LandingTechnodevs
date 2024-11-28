@@ -2,7 +2,6 @@
 import { TfiWorld } from "react-icons/tfi";
 import { CiMonitor } from "react-icons/ci";
 import { IoMdPhotos } from "react-icons/io";
-import { CheckArrowIcon } from "../assets/icons/CheckArrowIcon";
 import feature1 from "../assets/images/image-innovation-2048x2048.webp";
 import feature2 from "../assets/images/cohete.webp";
 import feature3 from "../assets/images/pc-ia.webp";
@@ -10,50 +9,49 @@ import feature4 from "../assets/images/code.webp";
 import feature5 from "../assets/images/centerpadel.png";
 ---
 
-<section class="w-full bg-bgDark2 pt-24 mb-8 sm:mb-24 md:pt-[12vw] lg:pt-16 z-20 relative">
+<section class="w-full bg-bgDark1 pt-24 mb-8 sm:mb-24 md:pt-[12vw] lg:pt-16 z-20 relative">
   <div class="w-screen flex justify-center relative">
     <div
       class="w-11/12 sm:w-4/5 lg:w-[90%] xl:w-[80%] 2xl:w-[1200px] mx-auto grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 z-10 rounded-xl mt-[-50px] lg:mt-[-150px] xl:mt-[-250px]"
       id="features"
     >
-    <div
-    class="hover:cursor-pointer p-6 flex flex-col items-center gap-6 rounded-3xl bg-gradient-to-r from-gray-950 to-gray-800 transition-transform duration-300 ease-in-out h-[350px] shadow-[0_0_50px_0_rgba(200,200,200,0.2)]"
-  >
-    <TfiWorld className="text-6xl text-primaryText" />
-    <h4 class="text-[#ddff53] text-2xl font-semibold text-center">
-      Desarrollo web
-    </h4>
-    <p class="text-primaryText text-center text-base">
-      Creamos sitios web modernos, rápidos y seguros. Diseñados a medida para
-      potenciar tu negocio y ofrecer la mejor experiencia a tus usuarios.
-    </p>
-  </div>
-  <div
-    class="p-6 flex flex-col items-center gap-6 rounded-3xl bg-gradient-to-b hover:cursor-pointer from-gray-800 to-gray-950 transition-transform duration-300 ease-in-out mt-7 h-[350px] shadow-[0_0_50px_0_rgba(200,200,200,0.2)]"
-  >
-    <CiMonitor className="text-6xl text-primaryText" />
-    <h4 class="text-[#ddff53] text-2xl font-semibold text-center">
-      Software a Medida
-    </h4>
-    <p class="text-primaryText text-center text-base">
-      Soluciones de software adaptadas a tus necesidades específicas. Optimiza
-      procesos y mejora la eficiencia de tu empresa con nuestras aplicaciones a
-      medida.
-    </p>
-  </div>
-  <div
-    class="hover:cursor-pointer p-6 flex flex-col items-center gap-6
-      rounded-3xl bg-gradient-to-r from-gray-800 to-black transition-transform duration-300 ease-in-out h-[350px] shadow-[0_0_50px_0_rgba(200,200,200,0.2)]"
-  >
-    <IoMdPhotos className="text-6xl text-primaryText" />
-    <h4 class="text-[#ddff53] text-2xl font-semibold text-center">
-      Redes Sociales
-    </h4>
-    <p class="text-primaryText text-center text-base">
-      Impulsa tu marca con estrategias de redes sociales efectivas. Aumenta tu
-      alcance y conecta con tu audiencia de manera auténtica y significativa.
-    </p>
-  </div>  
+      <div
+        class="feature-card hover:cursor-pointer p-6 flex flex-col items-center gap-6 rounded-3xl backdrop-blur-lg duration-300 ease-in-out h-[350px] shadow-[0_0_50px_0_rgba(200,200,200,0.1)] bg-[rgba(200,200,200,0.2)] main-border-gray-darker mb-4 relative cursor-pointer transition opacity-0 transform translate-y-10"
+      >
+        <TfiWorld className="text-6xl text-primaryText" />
+        <h4 class="text-[#ddff53] text-2xl font-semibold text-center">
+          Desarrollo web
+        </h4>
+        <p class="text-primaryText text-center text-base">
+          Creamos sitios web modernos, rápidos y seguros. Diseñados a medida para
+          potenciar tu negocio y ofrecer la mejor experiencia a tus usuarios.
+        </p>
+      </div>
+      <div
+        class="feature-card hover:cursor-pointer p-6 flex flex-col items-center gap-6 rounded-3xl mt-12 backdrop-blur-lg duration-300 ease-in-out h-[350px] shadow-[0_0_50px_0_rgba(200,200,200,0.1)] bg-[rgba(200,200,200,0.2)] main-border-gray-darker mb-4 relative cursor-pointer transition opacity-0 transform translate-y-10"
+      >
+        <CiMonitor className="text-6xl text-primaryText" />
+        <h4 class="text-[#ddff53] text-2xl font-semibold text-center">
+          Software a Medida
+        </h4>
+        <p class="text-primaryText text-center text-base">
+          Soluciones de software adaptadas a tus necesidades específicas. Optimiza
+          procesos y mejora la eficiencia de tu empresa con nuestras aplicaciones a
+          medida.
+        </p>
+      </div>
+      <div
+        class="feature-card hover:cursor-pointer p-6 flex flex-col items-center gap-6 rounded-3xl backdrop-blur-lg duration-300 ease-in-out h-[350px] shadow-[0_0_50px_0_rgba(200,200,200,0.1)] bg-[rgba(200,200,200,0.2)] main-border-gray-darker mb-4 relative cursor-pointer transition opacity-0 transform translate-y-10"
+      >
+        <IoMdPhotos className="text-6xl text-primaryText" />
+        <h4 class="text-[#ddff53] text-2xl font-semibold text-center">
+          Redes Sociales
+        </h4>
+        <p class="text-primaryText text-center text-base">
+          Impulsa tu marca con estrategias de redes sociales efectivas. Aumenta tu
+          alcance y conecta con tu audiencia de manera auténtica y significativa.
+        </p>
+      </div>
     </div>
   </div>
 
@@ -129,3 +127,45 @@ import feature5 from "../assets/images/centerpadel.png";
     </div>
   </div>
 </section>
+
+
+<script>
+  if (typeof window !== "undefined") {
+
+    const cards = document.querySelectorAll('.feature-card');
+    
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.30,
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    cards.forEach(card => observer.observe(card));
+  }
+</script>
+
+
+<style>
+  .feature-card {
+    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .feature-card {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+</style>

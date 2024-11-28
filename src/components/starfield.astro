@@ -5,8 +5,10 @@
 <script>
     import invariant from "tiny-invariant";
 
-    const COUNT = 800;
-    const SPEED = 0.05;
+    const COUNT = 300;
+    let speed = 0.3; // Comienza con velocidad inicial más alta
+    const MIN_SPEED = 0.05; // Velocidad mínima a la que se detendrá
+    const SPEED_DECAY = 0.001; // Tasa de reducción de velocidad por cuadro
 
     class Star {
         x: number;
@@ -55,9 +57,7 @@
     const stars = Array.from({ length: COUNT }, () => new Star(0, 0, 0));
     let rafId = 0;
 
-    const canvas = document.querySelector(
-        "#starfield-canvas",
-    ) as HTMLCanvasElement;
+    const canvas = document.querySelector("#starfield-canvas") as HTMLCanvasElement;
     invariant(canvas, "canvas should not be null");
     const ctx = canvas.getContext("2d");
 
@@ -85,7 +85,7 @@
         }
 
         ctx.translate(width / 2, height / 2);
-        ctx.fillStyle = "rgba(3, 4, 31, 0.4)";
+        ctx.fillStyle = "rgba(3, 4, 31, 0.7)";
         ctx.strokeStyle = "white";
         rafId = requestAnimationFrame(frame);
     }
@@ -94,12 +94,16 @@
         invariant(ctx, "canvas context should not be null");
         const { clientWidth: width, clientHeight: height } = container;
 
+        speed = Math.max(MIN_SPEED, speed - SPEED_DECAY);
+
+        ctx.fillRect(-width / 2, -height / 2, width, height);
         for (const star of stars) {
-            star.update(width, height, SPEED);
+            star.update(width, height, speed);
             star.draw(ctx);
         }
 
-        ctx.fillRect(-width / 2, -height / 2, width, height);
         rafId = requestAnimationFrame(frame);
     }
+
+    window.addEventListener("DOMContentLoaded", setup);
 </script>

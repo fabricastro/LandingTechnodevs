@@ -34,9 +34,9 @@ const ProjectGallery = () => {
   }, [selectedCategory, projects]);
 
   return (
-    <section className="lg:mb-16 w-full flex flex-col justify-center items-center bg-bgDark1">
+    <section className="lg:mb-16 w-full flex flex-col justify-center items-center bg-bgDark2">
       {/* Encabezado */}
-      <div className="fade-in-animation 2xl:w-[1150px] xl:w-[1050px] md:w-4/5 flex justify-center bg-bgDark1 pt-8 lg:pt-14 mx-auto lg:flex-row flex-col">
+      <div className="fade-in-animation 2xl:w-[1150px] xl:w-[1050px] md:w-4/5 flex justify-center bg-bgDark2 pt-8 lg:pt-14 mx-auto lg:flex-row flex-col">
         <div className="w-3/4 lg:w-1/2 flex flex-col lg:mx-unset mx-auto">
           <span className="block-subtitle text-center">
             El trabajo que nos respalda
