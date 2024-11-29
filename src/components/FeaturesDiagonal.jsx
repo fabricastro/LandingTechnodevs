@@ -34,12 +34,22 @@ const ProjectGallery = () => {
   }, [selectedCategory, projects]);
 
   return (
-    <section className="lg:mb-16 w-full flex flex-col justify-center items-center bg-bgDark2">
+    <section className="lg:mb-16 w-full relative flex flex-col justify-center items-center bg-[url('./noise-text.png')] bg-secondary-950 bg-opacity-30">
+      <div>
+        <div className="w-32 h-[1px] absolute bg-greenPrimary left-0 top-12 opacity-50"></div>
+        <div className="w-2 h-2 absolute rounded-full bg-greenPrimary left-32 top-[45px] opacity-50"></div>
+      </div>
+
+      <div>
+        <div className="w-48 h-[1px] absolute bg-greenPrimary left-0 top-16 opacity-50"></div>
+        <div className="w-2 h-2 absolute rounded-full bg-greenPrimary left-48 top-[60px] opacity-50"></div>
+      </div>
+
       {/* Encabezado */}
-      <div className="fade-in-animation 2xl:w-[1150px] xl:w-[1050px] md:w-4/5 flex justify-center bg-bgDark2 pt-8 lg:pt-14 mx-auto lg:flex-row flex-col">
+      <div className="fade-in-animation 2xl:w-[1150px] xl:w-[1050px] md:w-4/5 flex justify-center pt-8 lg:pt-14 mx-auto lg:flex-row flex-col">
         <div className="w-3/4 lg:w-1/2 flex flex-col lg:mx-unset mx-auto">
           <span className="block-subtitle text-center">
-            El trabajo que nos respalda
+            EL TRABAJO NOS RESPALDA
           </span>
           <h2 className="mt-10 mb-8 text-4xl lg:text-5xl block-big-title text-center">
             Proyectos
@@ -54,7 +64,7 @@ const ProjectGallery = () => {
             key={category.id}
             className={`filter-button ${
               selectedCategory === category.id ? "active" : ""
-            } bg-primaryColor text-white py-2 px-4 rounded-md hover:bg-bgDark2 transition duration-300 ease-in-out`}
+              } bg-secondary-700 text-white py-2 px-4 rounded-md hover:bg-bgDark2 transition duration-300 ease-in-out`}
             onClick={() => setSelectedCategory(category.id)}
           >
             {category.name}
