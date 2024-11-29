@@ -82,12 +82,12 @@ const ProjectGallery = () => {
             href={project.url}
             target="_blank"
             key={project.id}
-            className="backdrop-blur-lg bg-[rgba(3,7,18,0.4)] border hover:cursor-pointer border-gray-600 rounded-lg overflow-hidden shadow-lg project-card"
+            className="backdrop-blur-lg bg-[rgba(3,7,18,0.4)] group border shadow-[0_0_60px_0_rgba(200,200,200,0.3)] hover:cursor-pointer border-gray-600 rounded-lg overflow-hidden project-card"
           >
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-48 object-cover grayscale hover:grayscale-0 transition-all duration-200 ease-in-out"
+              className="w-full h-48 object-cover grayscale transition-all duration-300 ease-in-out group-hover:grayscale-0"
             />
             <div className="p-4">
               <h3 className="text-xl font-semibold text-white mb-2">
