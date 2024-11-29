@@ -9,17 +9,16 @@ export async function fetchProjectsWithCategories() {
         }
 
         const posts = await response.json();
+        console.log(posts);
 
         if (!Array.isArray(posts)) {
             throw new Error("La respuesta de la API no es un array");
         }
 
-        // Mapea los proyectos para incluir imágenes y detalles
         const postsWithDetails = await Promise.all(
             posts.map(async (post) => {
                 let imageUrl = 'default-image.png';
 
-                // Verifica si hay imagen destacada y obtén su URL
                 if (post.featured_media) {
                     const mediaResponse = await fetch(
                         `https://technodevs.com.ar/wp-json/wp/v2/media/${post.featured_media}`
@@ -38,7 +37,8 @@ export async function fetchProjectsWithCategories() {
                     title: post.title.rendered,
                     description: post.excerpt.rendered,
                     image: imageUrl,
-                    categories: post.categories, // IDs de las categorías asociadas
+                    categories: post.categories,
+                    url: post.link
                 };
             })
         );
