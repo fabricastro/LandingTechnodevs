@@ -4,7 +4,7 @@ import { CheckArrowIcon } from "../assets/icons/CheckArrowIcon";
 import plans from "../data/plan.json";
 ---
 
-<section class="w-screen flex justify-center bg-bgDark2 relative">
+<section class="w-screen flex justify-center bg-gradient-to-b from-bgDark1 to-bgDark2 relative section-with-glow">
   <div class="absolute -top-16" id="pricing"></div>
   <div class="pb-20 pt-12 2xl:w-[1150px] lg:w-[1050px] md:w-4/5">
     <div class="container mx-auto px-4">
@@ -38,7 +38,7 @@ import plans from "../data/plan.json";
               data-type={plan.type}
               data-plan={plan.plan}
             >
-              <div class="p-8 bg-bgDark3 rounded-3xl border-[1px] border-[rgba(255,255,255,0.2)] h-[470px]">
+              <div class="p-8 bg-[rgba(48,49,54,0.7)] rounded-3xl border-[1px] border-[rgba(255,255,255,0.2)] h-[470px]">
                 <h3 class="text-xl font-bold font-heading text-primaryText text-left">
                   {plan.title}
                 </h3>
@@ -113,5 +113,12 @@ import plans from "../data/plan.json";
 
   .plan-card[data-type="web"] {
     display: block;
+  }
+
+  .section-with-glow {
+  background: 
+    radial-gradient(600px circle at 0% 50%, rgba(156,158,239, 0.1), transparent 80%),
+    radial-gradient(500px circle at 85% 50%, rgba(221, 255, 83, 0.1), transparent 90%),
+    #121312;
   }
 </style>
