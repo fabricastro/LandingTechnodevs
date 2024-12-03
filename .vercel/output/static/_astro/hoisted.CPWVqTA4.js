@@ -1,1 +1,0 @@
-const n=document.getElementById("hamburgerMenu"),e=document.getElementById("mobileMenu");n.addEventListener("click",()=>{e.classList.toggle("hidden")});e.addEventListener("click",()=>{e.classList.add("hidden")});
