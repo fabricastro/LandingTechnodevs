@@ -34,7 +34,7 @@ const ProjectGallery = () => {
   }, [selectedCategory, projects]);
 
   return (
-    <section className="lg:mb-16 w-full relative flex flex-col justify-center items-center bg-[url('./noise-text.png')] bg-secondary-900 bg-opacity-30">
+    <section className="w-full relative flex flex-col justify-center items-center bg-[url('./noise-text.png')] bg-secondary-950 bg-opacity-40 py-12">
 
       {/* Decoradores */}
       <div>
@@ -47,7 +47,7 @@ const ProjectGallery = () => {
       </div>
 
       {/* Encabezado */}
-      <div className="fade-in-animation 2xl:w-[1150px] xl:w-[1050px] md:w-4/5 flex justify-center pt-8 lg:pt-14 mx-auto lg:flex-row flex-col">
+      <div className="fade-in-animation 2xl:w-[1150px] xl:w-[1050px] md:w-4/5 flex justify-center mx-auto lg:flex-row flex-col">
         <div className="w-3/4 lg:w-1/2 flex flex-col lg:mx-unset mx-auto">
           <span className="text-center text-xs text-secondary-400 tracking-wider font-bold uppercase">
             EL TRABAJO NOS RESPALDA
@@ -63,8 +63,7 @@ const ProjectGallery = () => {
         {categories.map((category) => (
           <button
             key={category.id}
-            className={`filter-button ${selectedCategory === category.id ? "active" : ""
-              } bg-gradient-to-br from-primary-600 to-primary-800 hover:shadow-[0_0_40px_0_rgba(133,177,0,0.5)] text-white py-2 px-4 rounded-md hover:bg-bgDark2 transition-all duration-300 ease-in-out`}
+            className={`filter-button ${selectedCategory === category.id ? "bg-primary-700" : "bg-[#444]"} px-[1rem] py-[0.5rem] transition-[0.2s] rounded-[0.25rem] bg-primary-700 text-white`}
             onClick={() => setSelectedCategory(category.id)}
           >
             {category.name}
@@ -75,14 +74,14 @@ const ProjectGallery = () => {
       {/* Galería de Proyectos */}
       <div
         id="project-gallery"
-        className="w-full max-w-screen-lg mx-auto my-12 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4"
+        className="w-full max-w-screen-lg mx-auto pt-12 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4"
       >
         {filteredProjects.map((project) => (
           <a
             href={project.url}
             target="_blank"
             key={project.id}
-            className="backdrop-blur-lg bg-[rgba(3,7,18,0.4)] group border shadow-[0_0_60px_0_rgba(200,200,200,0.3)] hover:cursor-pointer border-gray-600 rounded-lg overflow-hidden project-card"
+            className="backdrop-blur-lg bg-[rgba(3,7,18,0.4)] group border  hover:cursor-pointer border-gray-600 rounded-lg overflow-hidden project-card"
           >
             <img
               src={project.image}
