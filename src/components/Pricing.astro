@@ -10,16 +10,13 @@ import plans from "../data/plan.json";
     <div class="container mx-auto px-4">
       <!-- Título y Selector -->
       <div class="max-w-2xl mx-auto text-center mb-16">
-        <span class="block-subtitle">Encontrá el plan que se adapte a vos</span>
+        <span class="text-center text-xs text-white tracking-wider font-bold uppercase">Encontrá el plan que se adapte a vos</span>
         <h2
           class="mt-6 mb-6 text-4xl lg:text-5xl font-bold font-heading text-primaryText"
         >
           Mira nuestros planes
         </h2>
-        <p class="mb-6 text-secondaryText">
-          Selecciona el plan que se adapte a vos
-        </p>
-        <div class="toggle-wrapper flex justify-center items-center space-x-4">
+        <div class="toggle-wrapper flex justify-center items-center space-x-4 mt-12">
           <button class="toggle-button active" id="webToggle" data-type="web"
             >Diseño Web</button
           >
@@ -32,7 +29,7 @@ import plans from "../data/plan.json";
       <!-- Planes -->
       <div
         id="plansContainer"
-        class="flex flex-wrap flex-col lg:flex-row -mx-4 items-center mt-20"
+        class="flex flex-wrap flex-col lg:flex-row -mx-4 items-center mt-10"
       >
         {
           plans.map((plan) => (
@@ -41,19 +38,16 @@ import plans from "../data/plan.json";
               data-type={plan.type}
               data-plan={plan.plan}
             >
-              <div class="p-8 bg-bgDark3 rounded-3xl">
-                <h3 class="mb-2 text-xl font-bold font-heading text-primaryText text-left">
+              <div class="p-8 bg-bgDark3 rounded-3xl border-[1px] border-[rgba(255,255,255,0.2)] h-[470px]">
+                <h3 class="text-xl font-bold font-heading text-primaryText text-left">
                   {plan.title}
                 </h3>
-                <div class="flex justify-start items-end">
-                  <div class="text-4xl sm:text-5xl font-bold text-primaryText text-left mt-4 mr-2">
+                <div class="flex justify-start flex-col">
+                  <p class="text-gray-300 text-left mt-4">{plan.description}</p>
+                  <div class="text-4xl sm:text-5xl font-bold text-primaryText text-left mt-1 mb-10">
                     {plan.price}
                   </div>
-                  <div class="text-gray-500">/ proyecto</div>
                 </div>
-                <p class="mt-4 mb-6 text-gray-500 leading-loose text-left">
-                  {plan.description}
-                </p>
                 <ul class="mb-2 text-primaryText">
                   {plan.features.map((feature, index) => (
                     <li class="mb-4 flex">
@@ -80,7 +74,7 @@ import plans from "../data/plan.json";
     webToggle.classList.add("active");
     socialToggle.classList.remove("active");
     planCards.forEach((card) => {
-      if (card instanceof HTMLElement){
+      if (card instanceof HTMLElement) {
         card.style.display = card.dataset.type === "web" ? "block" : "none";
       }
     });

@@ -1,58 +1,71 @@
 [
-    {
-        "type": "web",
-        "plan": "basic",
-        "title": "Web Básico",
-        "price": "$500",
-        "description": "Ideal para iniciar tu presencia web.",
-        "features": [
-            "Responsive web design",
-            "SEO optimization",
-            "E-commerce functionality",
-            "Custom animations",
-            "User-friendly interface"
-        ]
-    },
-    {
-        "type": "web",
-        "plan": "standard",
-        "title": "Web Estándar",
-        "price": "$1000",
-        "description": "Más funciones para tu sitio web.",
-        "features": [
-            "Advanced SEO",
-            "Custom CMS integration",
-            "Enhanced security",
-            "Faster loading times",
-            "Support for multiple languages"
-        ]
-    },
-    {
-        "type": "social",
-        "plan": "basic",
-        "title": "Redes Básico",
-        "price": "$300",
-        "description": "Inicia tu presencia en redes sociales.",
-        "features": [
-            "Content creation",
-            "Community management",
-            "Analytics and insights",
-            "Engagement strategies",
-            "Targeted ad campaigns"
-        ]
-    },
-    {
-        "type": "social",
-        "plan": "premium",
-        "title": "Redes Premium",
-        "price": "$1200",
-        "description": "Obtén una estrategia de redes completa.",
-        "features": [
-            "Full-scale campaign management",
-            "Advanced analytics",
-            "Custom ad strategies",
-            "Multi-platform support",
-            "Comprehensive reporting"
-        ]
-    }
+  {
+    "type": "web",
+    "plan": "basic",
+    "title": "Landing Page",
+    "price": "$500",
+    "description": "Desde",
+    "features": [
+      "Diseño adaptable a cualquier dispositivo",
+      "Optimización SEO",
+      "Experiencia de usuario efectiva",
+      "Interfaz de usuario"
+    ]
+  },
+  {
+    "type": "web",
+    "plan": "standard",
+    "title": "E-Commerce",
+    "price": "$1000",
+    "description": "Desde",
+    "features": [
+      "Compra sin límites desde cualquier dispositivo",
+      "Integración de métodos de pago",
+      "Gestión de productos",
+      "Control total sobre tu inventario",
+      "Interfaz estratégica para aumentar tus ventas"
+    ]
+  },
+  {
+    "type": "web",
+    "plan": "Personalizado",
+    "title": "Web Estándar",
+    "price": "Consultar",
+    "description": "Precio personalizado",
+    "features": [
+      "Diseño adaptado a tus necesidades",
+      "Funcionalidades específicas",
+      "Asesoramiento personalizado",
+      "Flexibilidad total",
+      "Diseño único y exclusivo"
+    ]
+  },
+  {
+    "type": "social",
+    "plan": "basic",
+    "title": "Redes Básico",
+    "price": "$300",
+    "description": "Inicia tu presencia en redes sociales.",
+    "features": [
+      "Content creation",
+      "Community management",
+      "Analytics and insights",
+      "Engagement strategies",
+      "Targeted ad campaigns"
+    ]
+  },
+  {
+    "type": "social",
+    "plan": "premium",
+    "title": "Redes Premium",
+    "price": "$1200",
+    "description": "Obtén una estrategia de redes completa.",
+    "features": [
+      "Full-scale campaign management",
+      "Advanced analytics",
+      "Custom ad strategies",
+      "Multi-platform support",
+      "Comprehensive reporting"
+    ]
+  }
 ]
