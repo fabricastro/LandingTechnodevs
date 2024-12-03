@@ -34,7 +34,7 @@ const ProjectGallery = () => {
   }, [selectedCategory, projects]);
 
   return (
-    <section className="w-full relative flex flex-col justify-center items-center bg-[url('./noise-text.png')] bg-secondary-950 bg-opacity-40 py-12">
+    <section className="w-full relative flex flex-col justify-center items-center bg-[url('/noise-text.png')] bg-secondary-950 bg-opacity-40 py-12">
 
       {/* Decoradores */}
       <div>
