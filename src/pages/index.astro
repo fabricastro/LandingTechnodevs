@@ -5,7 +5,7 @@ import { Testimonials } from '../components/Testimonials.jsx'
 import FeaturesDiagonal from '../components/FeaturesDiagonal.jsx'
 import Pricing  from '../components/Pricing.astro'
 import { FAQ } from '../components/FAQ.jsx'
-import { Brands } from '../components/Brands.jsx'
+import Brands from '../components/Brands.astro'
 import Blog  from '../components/Blog.astro'
 import  Splash  from '../components/splash.astro'
 import '../styles/Theme.css'
@@ -17,7 +17,7 @@ import '../styles/Diagonals.css'
   <Features1 />
   <FeaturesDiagonal client:load/>
   <Pricing />
-  <Brands client:load />
+  <Brands />
   <Testimonials client:load />
   <Blog />
   <FAQ client:load /> 

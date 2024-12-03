@@ -39,7 +39,7 @@ export const Testimonials = () => (
         viewport={{ once: true }}
         transition={{ duration: 0.4, delay: 0.3 }}
       >
-        <div className="text-center mb-6 text-2xl font-semibold">Testimonials</div>
+        <div className="text-center mb-6 text-2xl text-white font-semibold">Testimonios</div>
         <div className="text-center mb-10 text-xl text-gray-500">
           People like you love technodevs
         </div>
