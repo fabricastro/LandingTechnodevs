@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { fetchProjectsWithCategories } from "../service/ProjectsService";
+import net from "../assets/icons/net.png";
+import dev from "../assets/icons/develop.png";
+import rocket from "../assets/icons/rocket.png";
+
 
 const SkeletonCard = () => (
   <div className="animate-pulse backdrop-blur-lg bg-[rgba(3,7,18,0.4)] border border-gray-600 rounded-lg overflow-hidden">
@@ -48,7 +52,7 @@ const ProjectGallery = () => {
   }, [selectedCategory, projects]);
 
   return (
-    <section className="w-full relative flex flex-col justify-center items-center bg-[url('/noise-text.png')] bg-secondary-950 bg-opacity-40 py-12">
+    <section className="w-full relative flex flex-col justify-center items-center bg-gradient-to-b from-bgDark2 to-bgDark1 py-12 border-y-[1px] border-bgDark3">
       {/* Decoradores */}
       <div>
         <div className="w-32 h-[1px] absolute bg-greenPrimary left-0 top-12 opacity-100"></div>
@@ -66,6 +70,12 @@ const ProjectGallery = () => {
       <div className="w-full">
         <div className="w-16 h-[1px] absolute bg-greenPrimary right-0 top-36 opacity-100"></div>
         <div className="w-2 h-2 absolute rounded-full bg-greenPrimary right-16 top-[141px] opacity-100"></div>
+      </div>
+
+      <div className="w-7 opacity-100 absolute left-12 bottom-12 flex gap-3">
+        <img src={net.src} alt="network icon" />
+        <img src={rocket.src} alt="rocket icon" />
+        <img src={dev.src} alt="dev icon" />
       </div>
 
       {/* Encabezado */}
@@ -113,7 +123,7 @@ const ProjectGallery = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover grayscale transition-[0.1s] duration-300 ease-in-out group-hover:grayscale-0"
+                className="w-full h-48 object-cover"
               />
               <div className="p-4">
                 <h3 className="text-xl font-semibold text-white mb-2">

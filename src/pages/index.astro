@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Features1 from '../components/Features1.astro'
-import { Testimonials } from '../components/Testimonials.jsx'
+import Testimonials from '../components/Testimonials.astro'
 import FeaturesDiagonal from '../components/FeaturesDiagonal.jsx'
 import Pricing  from '../components/Pricing.astro'
 import { FAQ } from '../components/FAQ.jsx'
@@ -18,7 +18,7 @@ import '../styles/Diagonals.css'
   <FeaturesDiagonal client:load/>
   <Pricing />
   <Brands />
-  <Testimonials client:load />
+  <Testimonials />
   <Blog />
   <FAQ client:load /> 
 </Layout>
