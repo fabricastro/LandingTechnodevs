@@ -4,7 +4,7 @@
   @apply text-primaryText text-3xl font-bold tracking-normal;
 }
 .block-big-title {
-  @apply text-primaryText text-4xl xl:text-5xl font-bold tracking-normal;
+  @apply text-primaryText font-bold tracking-normal;
 }
 .block-subtitle {
   @apply text-xs text-secondary-400  tracking-wider font-bold uppercase;

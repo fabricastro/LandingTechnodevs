@@ -7,7 +7,6 @@ export async function fetchBlogPosts() {
         }
 
         const posts = await response.json();
-        console.log(posts);
 
         if (!Array.isArray(posts)) {
             throw new Error("La respuesta de la API no es un array");

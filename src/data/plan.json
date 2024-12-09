@@ -3,42 +3,43 @@
     "type": "web",
     "plan": "basic",
     "title": "Landing Page",
-    "price": "$500",
+    "price": "$300.000 ARS",
     "description": "Desde",
     "features": [
-      "Diseño adaptable a cualquier dispositivo",
-      "Optimización SEO",
-      "Experiencia de usuario efectiva",
-      "Interfaz de usuario"
-    ]
+      "Diseño limpio y profesional.",
+      "Optimización SEO básica para Google.",
+      "Velocidad de carga optimizada.",
+      "Compatible con dispositivos móviles (responsive)."
+    ],
+    "badge": "¡Perfecta para tus campañas publicitarias!"
   },
   {
     "type": "web",
     "plan": "standard",
-    "title": "E-Commerce",
-    "price": "$1000",
+    "title": "Sitio Institucional",
+    "price": "$500.000 ARS",
     "description": "Desde",
     "features": [
-      "Compra sin límites desde cualquier dispositivo",
-      "Integración de métodos de pago",
-      "Gestión de productos",
-      "Control total sobre tu inventario",
-      "Interfaz estratégica para aumentar tus ventas"
-    ]
+      "Hasta 5 secciones personalizadas.",
+      "Optimización SEO avanzada.",
+      "Integración de formularios de contacto.",
+      "Panel de administración para editar contenido."
+    ],
+    "badge": "¡Refleja la identidad de tu empresa con estilo!"
   },
   {
     "type": "web",
-    "plan": "Personalizado",
-    "title": "Web Estándar",
-    "price": "Consultar",
-    "description": "Precio personalizado",
+    "plan": "standard",
+    "title": "Tienda Online",
+    "price": "$800.000 ARS",
+    "description": "Desde",
     "features": [
-      "Diseño adaptado a tus necesidades",
-      "Funcionalidades específicas",
-      "Asesoramiento personalizado",
-      "Flexibilidad total",
-      "Diseño único y exclusivo"
-    ]
+      "Catálogo autogestionable de productos.",
+      "Integración con pasarelas de pago (Mercado Pago, PayPal, etc.).",
+      "Gestión de inventario en tiempo real.",
+      "SEO para productos y categorías."
+    ],
+    "badge": "¡Aumenta tus ventas con una tienda 100% funcional!"
   },
   {
     "type": "social",

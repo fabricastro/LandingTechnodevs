@@ -82,7 +82,7 @@ const ProjectGallery = () => {
       <div className="fade-in-animation 2xl:w-[1150px] xl:w-[1050px] md:w-4/5 flex justify-center mx-auto lg:flex-row flex-col">
         <div className="w-3/4 lg:w-1/2 flex flex-col lg:mx-unset mx-auto">
           <span className="text-center text-xs text-white tracking-wider font-bold uppercase">
-            EL TRABAJO NOS RESPALDA
+            El Trabajo que Habla por Nosotros
           </span>
           <h2 className="mt-10 mb-8 text-4xl lg:text-5xl block-big-title text-center">
             Proyectos
