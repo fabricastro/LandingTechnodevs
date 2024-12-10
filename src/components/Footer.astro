@@ -1,25 +1,28 @@
 ---
-
-// Datos del footer
 const footerData = [
   {
-    title: "Products",
-    items: ["Services", "About Us", "News and Stories", "Roadmap"],
-  },
-  {
-    title: "Important Links",
+    title: "Productos y Servicios",
     items: [
-      "Organization Team",
-      "Our Journeys",
-      "Pricing Plans",
-      "Roadmap",
-      "Terms & Conditions",
-      "Privacy Policy",
+      "Creación de páginas web",
+      "Creación de chatbots",
+      "Diseño gráfico",
+      "Contenido para redes",
+      "PALTA",
     ],
   },
   {
-    title: "Company",
-    items: ["About Us", "Jobs", "Press", "Contact Us"],
+    title: "Enlaces Importantes",
+    items: [
+      "Preguntas Frecuentes",
+      "Sobre Nosotros",
+      "Términos y Condiciones",
+      "Política de Privacidad",
+      "Contacto",
+    ],
+  },
+  {
+    title: "Empresa",
+    items: ["Acerca de Technodevs", "Carreras", "Noticias", "Contáctanos"],
   },
 ];
 ---
@@ -33,47 +36,40 @@ const footerData = [
             <div class="text-white mr-2 text-6xl">
               <!-- <TailcastLogo /> -->
             </div>
-            <div class="text-white font-['Inter'] font-bold text-xl">technodevs</div>
+            <div class="text-white font-['Inter'] font-bold text-xl">Technodevs</div>
           </div>
           <p class="mb-10 mt-4 sm:w-[22rem] lg:w-[20rem] xl:w-[24rem] text-gray-400 leading-loose text-center lg:text-left mx-auto lg:mx-0">
-            Dashboard images were made using free Dark Admin dashboard that you can find
-            <a
-              href="https://bootstrapious.com/p/bootstrap-4-dark-admin"
-              target="_blank"
-              class="text-gray-100 ml-1.5"
-              aria-label="Dark Admin Dashboard"
-            >
-              here.
-            </a>
+            En Technodevs creamos soluciones innovadoras para potenciar tu negocio. Estamos aquí para ayudarte a crecer.
           </p>
           <div class="w-36 mx-auto lg:mx-0">
             <a
               class="inline-block w-10 h-10 mr-2 p-2 pt-[0.55rem] outlined-button"
-              href="#"
-              aria-label="Facebook"
-            >
-              <!-- <FacebookIcon /> -->
-            </a>
-            <a
-              class="inline-block w-10 h-10 mr-2 p-2 pt-[0.55rem] pl-[0.55rem] outlined-button"
-              href="#"
-              aria-label="Twitter"
-            >
-              <!-- <TwitterIcon /> -->
-            </a>
-            <a
-              class="inline-block w-10 h-10 mr-2 p-2 pt-[0.55rem] pl-[0.55rem] outlined-button"
-              href="#"
+              href="https://www.instagram.com/agencia.technodevs/"
+              target="_blank"
               aria-label="Instagram"
             >
-              <!-- <InstagramIcon /> -->
+              <!-- Icono Instagram -->
+              <svg class="w-6 h-6 text-gray-400 hover:text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 8h.01M16 12h.01M12 16h.01M21 12c0-2.209-2.691-4-6-4s-6 1.791-6 4 2.691 4 6 4 6-1.791 6-4zM4 12a1 1 0 011-1m14 0a1 1 0 00-1-1m-7 0a1 1 0 011-1m6 2a1 1 0 01-1 1" />
+              </svg>
+            </a>
+            <a
+              class="inline-block w-10 h-10 mr-2 p-2 pt-[0.55rem] pl-[0.55rem] outlined-button"
+              href="https://www.linkedin.com/company/technodevsweb/?originalSubdomain=ar"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <!-- Icono LinkedIn -->
+              <svg class="w-6 h-6 text-gray-400 hover:text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8a6 6 0 00-6-6H6a6 6 0 00-6 6v10a6 6 0 006 6h4a6 6 0 006-6V8zM6 16h4m0-8v8m-4-8h4M8 4h.01M20 8h.01M16 12h.01" />
+              </svg>
             </a>
           </div>
         </div>
         <div class="w-full lg:w-2/3 lg:pl-16 hidden lg:flex flex-wrap justify-between">
           {footerData.map(({ title, items }, sectionIndex) => (
             <div class="w-full md:w-1/3 lg:w-auto mb-16 md:mb-0">
-              <h3 class="mb-6 text-2xl font-bold text-primaryText">{title}</h3>
+              <h3 class="mb-6 text-xl font-bold text-primaryText">{title}</h3>
               <ul>
                 {items.map((item, itemIndex) => (
                   <li class="mb-4">
@@ -87,6 +83,9 @@ const footerData = [
           ))}
         </div>
       </div>
+    </div>
+    <div class="mt-10 text-center text-gray-400">
+      <p>Contacto: technodevscontacto@gmail.com</p>
     </div>
   </div>
 </footer>

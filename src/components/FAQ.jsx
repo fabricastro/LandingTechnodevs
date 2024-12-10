@@ -3,41 +3,32 @@ import { motion } from "framer-motion";
 
 const FAQData = [
   {
-    question: "¿Qué tipo de software desarrollan?",
+    question: "¿A medida que trabajan en mi nueva web, puedo ver avances?",
     answer:
-      "Yes, you can easily upgrade or downgrade your plan at any time. Simply navigate to the account settings in your dashboard and choose the desired plan. The changes will be reflected immediately, and any adjustments in pricing will be applied on your next billing cycle. Our support team is more than happy to provide guidance and recommendations.",
+      "¡Por supuesto! En Technodevs mantenemos una comunicación abierta durante todo el proceso. Te compartimos actualizaciones periódicas para que puedas ver los avances y aportar tus comentarios en cada etapa.",
   },
   {
-    question: "¿Pueden personalizar software existente?",
+    question: "¿En qué área geográfica proveen servicios?",
     answer:
-      "To claim your 25% discount, simply sign up for an account and enter the promotional code at checkout. The discount will be applied automatically to your purchase.",
+      "Trabajamos con clientes de cualquier parte del mundo. Gracias a herramientas digitales, podemos colaborar contigo sin importar tu ubicación geográfica.",
   },
   {
-    question: "¿Qué servicios de redes ofrecen?",
+    question: "¿Realizan modificaciones sobre sitios web existentes?",
     answer:
-      "We offer a 30-day money-back guarantee on all our plans. If you're not satisfied with our product, simply contact our support team within 30 days of purchase for a full refund.",
+      "Sí, realizamos rediseños y mejoras en sitios web ya existentes. Analizamos tu página actual y te proponemos las mejores soluciones para modernizarla, optimizar su rendimiento y adaptarla a tus necesidades.",
   },
   {
-    question: "¿Cuánto tiempo tarda en completarse un proyecto?",
+    question: "¿Cuánto tiempo lleva disponer de mi nueva página web?",
     answer:
-      "Our dedicated support team is here to help. You can reach out to us through the contact form on our website, send an email, or engage with us via live chat. We'll be happy to assist you with any questions or concerns you may have",
+      "El tiempo depende de la complejidad del proyecto. Una landing page puede estar lista en 1-2 semanas, mientras que un sitio más completo puede tomar entre 3 y 6 semanas. Siempre te brindamos un cronograma detallado antes de iniciar.",
   },
   {
-    question: "¿Qué sucede si encontramos problemas después de la entrega?",
+    question: "Ya tengo una web y quisiera transformarla en autoadministrable… ¿es posible?",
     answer:
-      "Our dedicated support team is here to help. You can reach out to us through the contact form on our website, send an email, or engage with us via live chat. We'll be happy to assist you with any questions or concerns you may have",
-  },
-  {
-    question: "¿Ofrecen formación para el uso del software o sistema?",
-    answer:
-      "Our dedicated support team is here to help. You can reach out to us through the contact form on our website, send an email, or engage with us via live chat. We'll be happy to assist you with any questions or concerns you may have",
-  },
-  {
-    question: "¿Qué nivel de soporte técnico ofrecen?",
-    answer:
-      "Our dedicated support team is here to help. You can reach out to us through the contact form on our website, send an email, or engage with us via live chat. We'll be happy to assist you with any questions or concerns you may have",
+      "¡Claro que sí! Podemos adaptar tu sitio actual a un sistema autoadministrable (como WordPress), para que puedas actualizar su contenido de manera sencilla y sin conocimientos técnicos avanzados.",
   },
 ];
+
 
 export const FAQ = () => (
   <section className="relative -mt-8 sm:mt-0 pt-12 sm:pt-16 pb-16 bg-blueGray-50 overflow-hidden">
@@ -51,12 +42,12 @@ export const FAQ = () => (
       <div className="relative z-10 container px-2 sm:px-8 lg:px-4 mx-auto w-11/12 sm:w-full">
         <div className="md:max-w-4xl mx-auto">
           <p className="mb-7 block-subtitle text-center">¿TIENES PREGUNTAS?</p>
-          <h2 className="mb-16 block-big-title text-center">
+          <h2 className="mb-16 block-big-title text-center text-4xl">
             Preguntas Frecuentes
           </h2>
           <div className="mb-11 flex flex-wrap -m-1">
             {FAQData.map((item, index) => (
-              <div className="w-full p-1" key={`${item.question}-${index}`}>
+              <div className="w-full p-1 select-none" key={`${item.question}-${index}`}>
                 <FAQBox
                   title={item.question}
                   content={item.answer}
@@ -97,7 +88,7 @@ const FAQBox = ({ defaultOpen, title, content }) => {
           viewBox="0 0 20 20"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className={`transition-all duration-500  ${
+          className={`transition-all duration-200  ${
             isOpen ? "rotate-[180deg]" : "rotate-[270deg]"
           }`}
         >
