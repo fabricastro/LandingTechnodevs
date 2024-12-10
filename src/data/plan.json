@@ -8,10 +8,11 @@
     "features": [
       "Diseño limpio y profesional.",
       "Optimización SEO básica para Google.",
+      "Llamada a la acción estratégica.",
       "Velocidad de carga optimizada.",
       "Compatible con dispositivos móviles (responsive)."
     ],
-    "badge": "¡Perfecta para tus campañas publicitarias!"
+    "badge": "¡Perfecta para campañas publicitarias!"
   },
   {
     "type": "web",
@@ -20,8 +21,9 @@
     "price": "$500.000 ARS",
     "description": "Desde",
     "features": [
-      "Hasta 5 secciones personalizadas.",
+      "Hasta 5 secciones personalizadas (Inicio, Nosotros, Servicios, etc.).",
       "Optimización SEO avanzada.",
+      "Diseño responsivo y accesible en todos los dispositivos.",
       "Integración de formularios de contacto.",
       "Panel de administración para editar contenido."
     ],
@@ -37,6 +39,7 @@
       "Catálogo autogestionable de productos.",
       "Integración con pasarelas de pago (Mercado Pago, PayPal, etc.).",
       "Gestión de inventario en tiempo real.",
+      "Diseño responsivo para dispositivos móviles.",
       "SEO para productos y categorías."
     ],
     "badge": "¡Aumenta tus ventas con una tienda 100% funcional!"
@@ -44,29 +47,76 @@
   {
     "type": "social",
     "plan": "basic",
-    "title": "Redes Básico",
-    "price": "$300",
-    "description": "Inicia tu presencia en redes sociales.",
+    "title": "Manual de Marca",
+    "price": "Consultar",
+    "description": "Construye la base de tu identidad visual.",
     "features": [
-      "Content creation",
-      "Community management",
-      "Analytics and insights",
-      "Engagement strategies",
-      "Targeted ad campaigns"
-    ]
+      "Diseño de logotipo y variantes.",
+      "Paleta de colores oficial.",
+      "Tipografías para impresos y digitales.",
+      "Guía de uso para mantener coherencia en tu marca.",
+      "Diseños que refuercen tu identidad visual."
+    ],
+    "badge": "¡Crea una identidad profesional!"
   },
   {
     "type": "social",
     "plan": "premium",
-    "title": "Redes Premium",
-    "price": "$1200",
-    "description": "Obtén una estrategia de redes completa.",
+    "title": "Contenido para Redes Sociales",
+    "price": "Consultar",
+    "description": "¡Impulsa tu presencia en redes con estilo!",
     "features": [
-      "Full-scale campaign management",
-      "Advanced analytics",
-      "Custom ad strategies",
-      "Multi-platform support",
-      "Comprehensive reporting"
-    ]
+      "Plantillas gráficas personalizadas.",
+      "Optimización para diferentes plataformas (Instagram, Facebook, etc.).",
+      "Diseños que refuercen tu identidad visual.",
+      "Estrategias de publicación efectivas.",
+      "Contenido orientado a resultados."
+    ],
+    "badge": "¡Impulsa tu presencia en redes con estilo!"
+  },
+  {
+    "type": "other",
+    "plan": "basic",
+    "title": "PALTA",
+    "price": "Consultar",
+    "description": "Sistema de gestión empresarial.",
+    "features": [
+      "Gestión de clientes y proveedores.",
+      "Generación de presupuestos en PDF.",
+      "Envío directo de presupuestos por correo electrónico.",
+      "Gestión de usuarios con roles específicos.",
+      "Soporte técnico continuo."
+    ],
+    "badge": "¡Optimiza tu administración en minutos!"
+  },
+  {
+    "type": "other",
+    "plan": "basic",
+    "title": "Chatbot con IA",
+    "price": "$120.000 ARS",
+    "description": "Desde",
+    "features": [
+      "Atención 24/7 con IA avanzada.",
+      "Respuestas rápidas y naturales.",
+      "Capacitado para resolver preguntas frecuentes.",
+      "Soporte para múltiples idiomas.",
+      "Automatización avanzada para mejorar eficiencia."
+    ],
+    "badge": "¡Reduce tiempos de espera y mejora la experiencia del cliente!"
+  },
+  {
+    "type": "other",
+    "plan": "premium",
+    "title": "Chatbot con IA",
+    "price": "$60.000 ARS",
+    "description": "Desde",
+    "features": [
+      "Brinda información sobre productos y servicios.",
+      "Guía a los usuarios en tiempo real.",
+      "Reduce la carga del personal de atención al cliente.",
+      "Fácil integración con múltiples plataformas.",
+      "Automatización para una atención rápida."
+    ],
+    "badge": "¡Agiliza la atención y ahorra recursos!"
   }
 ]

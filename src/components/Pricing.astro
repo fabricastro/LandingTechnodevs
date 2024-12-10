@@ -21,7 +21,12 @@ import plans from "../data/plan.json";
             >Diseño Web</button
           >
           <button class="toggle-button" id="socialToggle" data-type="social"
-            >Redes</button
+            >Diseño Gráfico
+            </button
+          >
+          <button class="toggle-button" id="otherToggle" data-type="other"
+            >Otros Servicios
+            </button
           >
         </div>
       </div>
@@ -29,51 +34,67 @@ import plans from "../data/plan.json";
       <!-- Planes -->
       <div
         id="plansContainer"
-        class="flex flex-wrap flex-col lg:flex-row -mx-4 items-center mt-10"
+        class="flex flex-wrap flex-col lg:flex-row -mx-4 items-stretch mt-10"
       >
-        {
-          plans.map((plan) => (
-            <div
-              class="plan-card w-[350px] sm:w-[380px] lg:w-1/3 px-3 mb-8 lg:mb-0"
-              data-type={plan.type}
-              data-plan={plan.plan}
-              >
-              <div class="py-8 px-5 bg-[rgba(48,49,54,0.7)] flex flex-col justify-start rounded-3xl border-[1px] border-[rgba(255,255,255,0.2)] h-[500px]">
-                <h3 class="text-xl font-bold font-heading text-primaryText text-left">
-                  {plan.title}
-                </h3>
-                <div class="flex justify-start flex-col">
-                  <p class="text-gray-300 text-left mt-4">{plan.description}</p>
-                  <div class="text-4xl sm:text-4xl font-bold text-primaryText text-left mt-1 mb-10">
-                    {plan.price}
-                  </div>
+        {plans.map((plan) => (
+          <a
+            href={`https://wa.me/+5492646270803?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20${encodeURIComponent(
+              plan.title
+            )}`}
+            target="_blank"
+            class="plan-card w-[350px] sm:w-[380px] lg:w-1/3 px-3 mb-8 lg:mb-0 block"
+            data-type={plan.type}
+            data-plan={plan.plan}
+          >
+            <div class="py-8 px-5 bg-[rgba(48,49,54,0.7)] flex flex-col justify-start h-full rounded-3xl border-[1px] border-[rgba(255,255,255,0.2)] min-h-[560px]">
+              <h3 class="text-xl font-bold font-heading text-primaryText text-left">
+                {plan.title}
+              </h3>
+              <div class="flex justify-start flex-col">
+                <p class="text-gray-300 text-left mt-4">{plan.description}</p>
+                <div class="text-4xl sm:text-4xl font-bold text-primaryText text-left mt-1 mb-10">
+                  {plan.price}
                 </div>
-                <ul class="mb-2 text-primaryText">
-                  {plan.features.map((feature, index) => (
-                    <li class="mb-3 flex">
-                      <CheckArrowIcon />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <span class="text-sm mt-auto text-gray-300 text-center w-full self-end place-self-end px-7">{plan.badge}</span>
               </div>
+              <ul class="mb-2 text-primaryText">
+                {plan.features.map((feature, index) => (
+                  <li class="mb-3 flex">
+                    <CheckArrowIcon />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <span class="text-sm mt-auto text-gray-300 text-center w-full self-end place-self-end px-7">
+                {plan.badge}
+              </span>
             </div>
-          ))
-        }
+          </a>
+        ))}
+      </div>
+
+      <!-- Botón CTA ilustrativo -->
+      <div class="text-center mt-10">
+        <div
+          class="inline-block px-6 py-3 bg-primary-700 text-white text-lg font-bold rounded-md cursor-default"
+        >
+          Elige tu plan y contáctanos ahora
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+
 <script>
   const webToggle = document.getElementById("webToggle");
   const socialToggle = document.getElementById("socialToggle");
+  const otherToggle = document.getElementById("otherToggle");
   const planCards = document.querySelectorAll(".plan-card");
 
   webToggle.addEventListener("click", () => {
     webToggle.classList.add("active");
     socialToggle.classList.remove("active");
+    otherToggle.classList.remove("active");
     planCards.forEach((card) => {
       if (card instanceof HTMLElement) {
         card.style.display = card.dataset.type === "web" ? "block" : "none";
@@ -84,9 +105,21 @@ import plans from "../data/plan.json";
   socialToggle.addEventListener("click", () => {
     socialToggle.classList.add("active");
     webToggle.classList.remove("active");
+    otherToggle.classList.remove("active");
     planCards.forEach((card) => {
       if (card instanceof HTMLElement) {
         card.style.display = card.dataset.type === "social" ? "block" : "none";
+      }
+    });
+  });
+
+  otherToggle.addEventListener("click", () => {
+    otherToggle.classList.add("active");
+    socialToggle.classList.remove("active");
+    webToggle.classList.remove("active");
+    planCards.forEach((card) => {
+      if (card instanceof HTMLElement) {
+        card.style.display = card.dataset.type === "other" ? "block" : "none";
       }
     });
   });
