@@ -4,11 +4,11 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaSquareBehance } from "react-icons/fa6";
 
 const navbarLinks = [
-  { label: "Servicios", href: "/#features", ariaLabel: "Features" },
   { label: "Nosotros", href: "/#about", ariaLabel: "Home" },
+  { label: "Proyectos", href: "/#projects", ariaLabel: "Projects" },
   { label: "Planes", href: "/#pricing", ariaLabel: "Pricing" },
   { label: "Blog", href: "/#blog", ariaLabel: "blog" },
-  { label: "Contacto", href: "/#FAQ", ariaLabel: "FAQ" },
+  { label: "FAQ", href: "/#FAQ", ariaLabel: "FAQ" },
 ];
 ---
 
@@ -23,7 +23,12 @@ const navbarLinks = [
     <a href="/#home" aria-label="Home">
       <div class="flex justify-start items-center grow basis-0">
         <div>
-          <img src="./logotech@2x-300x61.png" alt="logo" class="w-[60%]" loading="eager"/>
+          <img
+            src="./logotech@2x-300x61.png"
+            alt="logo"
+            class="w-[60%]"
+            loading="eager"
+          />
         </div>
       </div>
     </a>
@@ -145,7 +150,11 @@ const navbarLinks = [
       navbar.classList.remove("bg-transparent");
     } else {
       navbar.classList.add("bg-transparent");
-      navbar.classList.remove("bg-gray-950/70", "backdrop-blur-md", "shadow-md");
+      navbar.classList.remove(
+        "bg-gray-950/70",
+        "backdrop-blur-md",
+        "shadow-md"
+      );
     }
   });
 

@@ -3,26 +3,28 @@ const footerData = [
   {
     title: "Productos y Servicios",
     items: [
-      "Creación de páginas web",
-      "Creación de chatbots",
-      "Diseño gráfico",
-      "Contenido para redes",
-      "PALTA",
+      { text: "Creación de páginas web", url: "#pricing"},
+      { text: "Creación de chatbots", url: "#pricing"},
+      { text: "Diseño gráfico", url: "#pricing"},
+      { text: "Contenido para redes", url: "#pricing"},
+      { text: "PALTA", url: "#pricing"}
     ],
   },
   {
     title: "Enlaces Importantes",
     items: [
-      "Preguntas Frecuentes",
-      "Sobre Nosotros",
-      "Términos y Condiciones",
-      "Política de Privacidad",
-      "Contacto",
+      { text: "Preguntas Frecuentes", url: "#FAQ"},
+      { text: "Sobre Nosotros", url: "#about"},
+      { text: "Contacto", url: "https://wa.me/+542646270803"}
     ],
   },
   {
     title: "Empresa",
-    items: ["Acerca de Technodevs", "Carreras", "Noticias", "Contáctanos"],
+    items: [
+      { text: "Acerca de Technodevs", url: "#about"},
+      { text: "Noticias", url: "#blog"},
+      { text: "Contáctanos", url: "https://wa.me/+542646270803"}
+    ],
   },
 ];
 ---
@@ -73,8 +75,8 @@ const footerData = [
               <ul>
                 {items.map((item, itemIndex) => (
                   <li class="mb-4">
-                    <a class="text-gray-400 hover:text-gray-300" href="#" aria-label={item}>
-                      {item}
+                    <a class="text-gray-400 hover:text-gray-300" href={item.url} aria-label={item.text}>
+                      {item.text}
                     </a>
                   </li>
                 ))}

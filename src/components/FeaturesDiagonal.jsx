@@ -52,7 +52,7 @@ const ProjectGallery = () => {
   }, [selectedCategory, projects]);
 
   return (
-    <section className="w-full relative flex flex-col justify-center items-center bg-gradient-to-b from-bgDark2 to-bgDark1 py-12 border-y-[1px] border-bgDark3">
+    <section id="projects" className="w-full relative flex flex-col justify-center items-center bg-gradient-to-b from-bgDark2 to-bgDark1 py-12 border-y-[1px] border-bgDark3">
       {/* Decoradores */}
       <div>
         <div className="w-32 h-[1px] absolute bg-greenPrimary left-0 top-12 opacity-100"></div>
