@@ -90,7 +90,7 @@ const navbarLinks = [
   <!-- Mobile navbar -->
   <div
     id="mobileMenu"
-    class="flex flex-col mt-16 lg:hidden absolute top-4 left-0 bg-bgDark1 z-50 w-full items-center gap-10 pb-10 border-y border-solid border-bgDark3 pt-10 hidden"
+    class="flex flex-col mt-16 lg:hidden absolute top-4 left-0 bg-gray-950 backdrop-blur-md z-50 w-full items-center gap-10 pb-10 border-y border-solid border-bgDark3 pt-10 hidden"
   >
     {
       navbarLinks.map(({ label, href, ariaLabel }) => (
@@ -144,8 +144,8 @@ const navbarLinks = [
   const mobileMenu = document.getElementById("mobileMenu");
 
   // Change navbar background on scroll
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 0) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 0) {
       navbar.classList.add("bg-gray-950/70", "backdrop-blur-md", "shadow-md");
       navbar.classList.remove("bg-transparent");
     } else {
@@ -160,6 +160,7 @@ const navbarLinks = [
 
   hamburgerMenu.addEventListener("click", () => {
     mobileMenu.classList.toggle("hidden");
+    navbar.classList.add("bg-gray-950/70", "backdrop-blur-md", "shadow-md")
   });
 
   mobileMenu.addEventListener("click", () => {
