@@ -7,21 +7,21 @@ const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
 ---
 
-<section class="relative h-full py-10">
+<section class="relative h-[100vh] lg:h-full lg:py-10 px-5 md:px-12 lg:px-12 xl:px-28 flex lg:flex-col items-center">
   <Starfield />
-  <div class="relative grid h-full place-items-center sm:grid-cols-2">
+  <div class="relative h-full sm:grid-cols-2 flex items-center w-full max-w-[1280px] justify-center">
     <div
-      class="flex flex-col items-start max-w-[40rem] gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end custom-shadow"
+      class="flex flex-col items-center lg:items-start max-w-[40rem] gap-10 lg:gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end custom-shadow z-20 h-full justify-center"
     >
       <div
-        class="gradient-text text-start font-extrabold w-full tracking-tighter text-6xl md:text-8xl"
+        class="gradient-text text-center lg:text-start font-extrabold w-full tracking-tighter text-6xl md:text-7xl xl:text-8xl"
       >
         <span>
           Web Design &
-          <br /> Social Media
+          <br class="hidden lg:block" /> Social Media
         </span>
       </div>
-      <span class="text-start text-lg gradient-text">
+      <span class="text-center lg:text-start text-lg gradient-text">
         Creamos experiencias digitales únicas con desarrollo web, aplicaciones a
         medida y diseño de alto impacto.
       </span>
@@ -37,7 +37,7 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     </div>
     <div
       id="astronaut"
-      class="w-2/3 max-w-3xl self-start sm:w-10/12 sm:self-auto sm:justify-self-start"
+      class="w-2/3 max-w-3xl self-start sm:w-10/12 lg:w-8/12 xl:10/12 sm:self-auto sm:justify-self-start mt-10 hidden lg:block"
     >
       <Image
         class="h-full w-full object-cover"
@@ -49,7 +49,7 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
       />
     </div>
   </div>
-  <div class="relative w-screen justify-center mb-[-42px] z-10">
+  <div class="hidden lg:block relative w-screen justify-center mb-[-42px] z-10">
     <svg
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"

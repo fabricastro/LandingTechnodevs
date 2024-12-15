@@ -6,17 +6,53 @@ import Titanes from "../assets/logos/clubDeTitanes.png";
 import Daes from "../assets/logos/daes.png";
 import Gobierno from "../assets/logos/gobiernoSJ.png";
 import DonTomas from "../assets/logos/dontomas.png";
----
 
-<section class="bg-gradient-to-b from-bgDark2 to-bgDark1 w-full py-32 z-50 relative">
-    <div class="container px-4 mx-auto 2xl:w-[1200px] xl:w-[1100px] lg:w-[1000px] md:w-4/5">
+import VillaDonTomas from "../assets/images/VillaDonTomas.webp";
+import TomasCasiva from "../assets/images/tomasCasiva.png";
+import DomumPNG from "../assets/images/domum.png";
+import triangle from "./triangle.svg";
+const testimonialsData = [
+  {
+    customerName: "Daniela",
+    customerTitle: "Villa Don Tomás",
+    content:
+      "El equipo de Technodevs transformó mi sitio web en algo moderno y funcional. Ahora refleja perfectamente mi marca, y mis clientes lo aman. ¡Fue una experiencia increíble trabajar con ellos!",
+    image: VillaDonTomas,
+  },
+  {
+    customerName: "Marcelo Casiva",
+    customerTitle: "Web Escritor",
+    content:
+      "Desde el primer contacto, el equipo de Technodevs entendió lo que quería. Diseñaron mi sitio desde cero, y ahora puedo compartir mis relatos de forma profesional y sencilla. ¡Estoy encantado con el resultado!",
+    image: TomasCasiva,
+  },
+  {
+    customerName: "Franco",
+    customerTitle: "Domum",
+    content:
+      "El equipo de Technodevs no solo rediseñó nuestra web, sino que también tomó el control de nuestras redes sociales con gran profesionalismo. La imagen renovada y los resultados en interacción fueron inmediatos. ¡Son geniales!",
+    image: DomumPNG,
+  },
+];
+---
+<section class="relative overflow-hidden">
+
+  <div class="absolute top-[-100px] left-[-300px] rotate-45 z-[100] hidden lg:block">
+    <Image src={triangle} alt="triangle" class="opacity-50" />
+  </div>
+  <div class="absolute top-[400px] right-[-200px] rotate-45 z-[100] w-[500px] hidden lg:block">
+    <Image src={triangle} alt="triangle" class="opacity-50" />
+  </div>
+
+  <div class="bg-gradient-to-b from-bgDark2 to-bgDark1 w-full py-32 relative overflow-hidden">
+    <div class="container px-4 mx-auto 2xl:w-[1200px] xl:w-[1100px] lg:w-[1000px] md:w-4/5 z-[300]">
       <div class="flex lg:flex-row flex-col items-center -mx-4 justify-center lg:text-left text-center">
         <div class="w-full lg:w-1/2 px-4 mb-12 lg:mb-0">
           <div class="flex flex-col">
-            <h2 class="mb-2 text-4xl sm:text-5xl 2xl:text-6xl font-bold tracking-normal text-primaryText">
+            <h2 class="mb-2 text-4xl sm:text-5xl 2xl:text-6xl font-bold tracking-normal text-primaryText z-[300]">
               Confían en
             </h2>
-            <h2 class="text-4xl sm:text-5xl 2xl:text-6xl font-bold tracking-normal text-secondaryColor">
+            <h2 class="text-4xl sm:text-5xl 2xl:text-6xl font-bold tracking-normal text-secondaryColor z-[300]">
               Nuestro trabajo
             </h2>
           </div>
@@ -45,4 +81,55 @@ import DonTomas from "../assets/logos/dontomas.png";
         </div>
       </div>
     </div>
+</div>
+
+<div class="w-full flex justify-center pt-16 pb-24 bg-bgDark1 relative">
+  <div class="absolute -top-16" id="feedback"></div>
+  <div class="flex flex-col w-full lg:w-[1150px] justify-center">
+    <div class="text-center mb-6 text-5xl text-white font-semibold">
+      Testimonios
+    </div>
+    <div class="text-center text-xs text-white tracking-wider font-bold uppercase mb-5">
+      PERSONAS QUE AMAN TECHNODEVS
+    </div>
+
+    <div
+      class="flex flex-col lg:flex-row gap-8 lg:gap-5 xl:gap-10 px-6 xl:px-0 items-center z-[200]"
+    >
+      {
+        testimonialsData.map((testimonial, index) => (
+          <div class="w-full sm:w-4/5 md:w-[560px] lg:w-1/3 bg-[#f9f9f9] border-[#e0e0e0] shadow-light rounded-xl p-6 flex flex-col">
+            <div class="flex mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                class="fill-secondary-500"
+                width="35px"
+              >
+                <path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z" />
+              </svg>{" "}
+            </div>
+            <p class="text-gray-dark text-sm mb-4">{`"${testimonial.content}"`}</p>
+            <div class="flex-center mt-4">
+              <img
+                src={testimonial.image.src}
+                alt="Customer avatar"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <div class="text-gray-800 font-medium">
+                  {testimonial.customerName}
+                </div>
+                <div class="text-gray-500 text-sm">
+                  {testimonial.customerTitle}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
 </section>

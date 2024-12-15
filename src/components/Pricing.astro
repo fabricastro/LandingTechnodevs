@@ -4,10 +4,10 @@ import { CheckArrowIcon } from "../assets/icons/CheckArrowIcon";
 import plans from "../data/plan.json";
 ---
 
-<section class="w-screen flex justify-center bg-gradient-to-b from-bgDark1 to-bgDark2 relative section-with-glow">
+<section class="w-screen flex justify-center bg-gradient-to-b from-bgDark1 to-bgDark2 relative section-with-glow overflow-hidden">
   <div class="absolute -top-16" id="pricing"></div>
   <div class="pb-20 pt-12 2xl:w-[1150px] lg:w-[1050px] md:w-4/5">
-    <div class="container mx-auto px-4">
+    <div class="">
       <!-- Título y Selector -->
       <div class="max-w-2xl mx-auto text-center mb-16">
         <span class="text-center text-xs text-white tracking-wider font-bold uppercase">Elige el Plan Ideal para Tu Negocio</span>
@@ -16,15 +16,15 @@ import plans from "../data/plan.json";
         >
           Nuestros planes
         </h2>
-        <div class="toggle-wrapper flex justify-center items-center space-x-4 mt-12">
-          <button class="toggle-button active" id="webToggle" data-type="web"
+        <div class=" flex justify-center items-center mt-12 px-4 flex-col sm:flex-row gap-2 sm:gap-5 w-full">
+          <button class="toggle-button active w-full max-w-[70%] lg:max-w-48" id="webToggle" data-type="web"
             >Diseño Web</button
           >
-          <button class="toggle-button" id="socialToggle" data-type="social"
+          <button class="toggle-button w-full max-w-[70%] lg:max-w-48" id="socialToggle" data-type="social"
             >Diseño Gráfico
             </button
           >
-          <button class="toggle-button" id="otherToggle" data-type="other"
+          <button class="toggle-button w-full max-w-[70%] lg:max-w-48" id="otherToggle" data-type="other"
             >Otros Servicios
             </button
           >
@@ -34,7 +34,7 @@ import plans from "../data/plan.json";
       <!-- Planes -->
       <div
         id="plansContainer"
-        class="flex flex-wrap flex-col lg:flex-row -mx-4 items-stretch mt-10"
+        class="grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-20 mt-10 w-full justify-items-center px-2 sm:px-4"
       >
         {plans.map((plan) => (
           <a
@@ -42,7 +42,7 @@ import plans from "../data/plan.json";
               plan.title
             )}`}
             target="_blank"
-            class="plan-card w-[350px] sm:w-[380px] lg:w-1/3 px-3 mb-8 lg:mb-0 block"
+            class="plan-card w-full sm:w-[380px] px-3 mb-8 lg:mb-0 block"
             data-type={plan.type}
             data-plan={plan.plan}
           >

@@ -24,7 +24,7 @@ const ProjectGallery = () => {
 
   const categories = [
     { id: "All", name: "Todo" },
-    { id: "10", name: "Desarrollo Web" },
+    { id: "10", name: "Web" },
     { id: "12", name: "Diseño" },
   ];
 
@@ -54,25 +54,25 @@ const ProjectGallery = () => {
   return (
     <section id="projects" className="w-full relative flex flex-col justify-center items-center bg-gradient-to-b from-bgDark2 to-bgDark1 py-12 border-y-[1px] border-bgDark3">
       {/* Decoradores */}
-      <div>
+      <div className="hidden lg:block">
         <div className="w-32 h-[1px] absolute bg-greenPrimary left-0 top-12 opacity-100"></div>
         <div className="w-2 h-2 absolute rounded-full bg-greenPrimary left-32 top-[45px] opacity-100"></div>
       </div>
-      <div>
+      <div className="hidden lg:block">
         <div className="w-48 h-[1px] absolute bg-greenPrimary left-0 top-16 opacity-100"></div>
         <div className="w-2 h-2 absolute rounded-full bg-greenPrimary left-48 top-[60px] opacity-100"></div>
       </div>
 
-      <div className="w-full">
+      <div className="w-full hidden lg:block">
         <div className="w-20 h-[1px] absolute bg-greenPrimary right-0 top-32 opacity-100"></div>
         <div className="w-2 h-2 absolute rounded-full bg-greenPrimary right-20 top-[125px] opacity-100"></div>
       </div>
-      <div className="w-full">
+      <div className="w-full hidden lg:block">
         <div className="w-16 h-[1px] absolute bg-greenPrimary right-0 top-36 opacity-100"></div>
         <div className="w-2 h-2 absolute rounded-full bg-greenPrimary right-16 top-[141px] opacity-100"></div>
       </div>
 
-      <div className="w-7 opacity-100 absolute left-12 bottom-12 flex gap-3">
+      <div className="hidden w-7 opacity-100 absolute md:left-12 top-12 lg:top-auto lg:bottom-12 md:flex gap-3">
         <img src={net.src} alt="network icon" />
         <img src={rocket.src} alt="rocket icon" />
         <img src={dev.src} alt="dev icon" />

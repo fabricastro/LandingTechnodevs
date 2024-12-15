@@ -35,7 +35,7 @@ import { Image } from 'astro:assets';
 
 <footer aria-label="Site footer">
   <div class="pt-10 lg:pt-20 lg:pb-16 bg-bgDark1 radius-for-skewed relative overflow-hidden">
-    <Image src={Rocket} alt="Domum" class="absolute left-[-80px] bottom-[-60px] w-[400px]"/>
+    <Image src={Rocket} alt="Domum" class="absolute left-[-120px] lg:left-[-80px] opacity-45 xl:opacity-100 bottom-[-60px] w-[400px] z-0"/>
     <div class="container mx-auto px-4 w-4/5 md:w-11/12 lg:w-10/12 xl:w-4/5 2xl:w-2/3">
       <div class="flex flex-wrap">
         <div class="w-full lg:w-1/3 mb-16 lg:mb-0">
@@ -46,7 +46,7 @@ import { Image } from 'astro:assets';
           </div>
           <div class="flex flex-col items-start justify-center">
             <Image src={Logo} alt="Logo" class="w-24 object-scale-down mx-auto lg:mx-0"/>
-            <p class="mb-10 mt-4 sm:w-[22rem] lg:w-[20rem] xl:w-[24rem] text-gray-400 leading-loose text-center lg:text-left mx-auto lg:mx-0">
+            <p class="mb-10 mt-4 sm:w-[22rem] lg:w-[20rem] xl:w-[24rem] text-gray-400 leading-loose text-center lg:text-left mx-auto lg:mx-0 z-10">
               En Technodevs creamos soluciones innovadoras para potenciar tu negocio. Estamos aquí para ayudarte a crecer.
             </p>
           </div>
@@ -93,8 +93,8 @@ import { Image } from 'astro:assets';
         </div>
       </div>
     </div>
-    <div class="mt-10 text-center text-gray-400">
-      <p>Contacto: technodevscontacto@gmail.com</p>
+    <div class="mt-10 text-center text-gray-400 relative">
+      <p class="z-10">Contacto: technodevscontacto@gmail.com</p>
     </div>
   </div>
 </footer>
