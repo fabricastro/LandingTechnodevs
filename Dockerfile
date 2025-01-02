@@ -19,7 +19,7 @@ RUN npm run build
 FROM nginx:alpine
 
 # Copia los archivos construidos de Astro al directorio de Nginx
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/.vercel/output /usr/share/nginx/html
 
 # Expone el puerto 80 para acceder a la aplicación
 EXPOSE 80
