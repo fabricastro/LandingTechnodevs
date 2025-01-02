@@ -10,7 +10,7 @@ COPY tsconfig*.json ./
 COPY . .
 
 # Instala las dependencias necesarias
-RUN npm install
+RUN npm install --verbose
 
 # Construye la aplicación de Astro
 RUN npm run build
