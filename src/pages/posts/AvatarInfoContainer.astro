@@ -1,0 +1,18 @@
+---
+import { FaLinkedin } from "react-icons/fa";
+const author = Astro.props.author;
+---
+
+<div class="flex gap-4 items-center">
+  <img class="w-14 h-14 rounded-full" src={author.avatar} alt="" />
+  <div class="flex flex-col justify-between h-14">
+    <span class="text-black text-lg font-semibold">
+      {author.name}
+    </span>
+    <a href={author.linkedin} target="_blank">
+      <FaLinkedin
+        className="text-black text-2xl hover:cursor-pointer transition"
+      />
+    </a>
+  </div>
+</div>

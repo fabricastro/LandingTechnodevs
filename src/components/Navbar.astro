@@ -2,6 +2,7 @@
 import { BiLogoInstagram } from "react-icons/bi";
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareBehance } from "react-icons/fa6";
+import TechnodevsLogo from "../assets/images/logotech@2x-300x61.png";
 
 const navbarLinks = [
   { label: "Nosotros", href: "/#about", ariaLabel: "Home" },
@@ -17,14 +18,12 @@ const navbarLinks = [
   class="w-full h-20 flex flex-col justify-center items-center fixed z-[1000] transition-colors duration-300"
   aria-label="Main navigation"
 >
-  <div
-    class="2xl:w-[1280px] xl:w-10/12 w-11/12 flex justify-between items-center relative"
-  >
+  <div class="2xl:w-[1280px] xl:w-10/12 w-11/12 flex justify-between items-center relative">
     <a href="/#home" aria-label="Home">
       <div class="flex justify-start items-center grow basis-0">
         <div>
           <img
-            src="./logotech@2x-300x61.png"
+            src={TechnodevsLogo.src}
             alt="logo"
             class="w-[60%]"
             loading="eager"
@@ -33,137 +32,48 @@ const navbarLinks = [
       </div>
     </a>
     <div class="hidden lg:flex h-full pl-12 pb-2">
-      {
-        navbarLinks.map(({ href, label, ariaLabel }) => (
-          <a
-            class="text-white lg:text-base text-2xl leading-6 mr-4 ml-4 2xl:mr-6 2xl:ml-6 cursor-pointer font-normal lg:font-medium hover:scale-110 transition h-full pt-2"
-            href={href}
-            aria-label={ariaLabel}
-          >
-            {label}
-          </a>
-        ))
-      }
-    </div>
-    <div class="grow basis-0 justify-end hidden lg:flex gap-4">
-      <a
-        href="https://www.instagram.com/agencia.technodevs/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram"
-      >
-        <BiLogoInstagram
-          className="text-white text-2xl hover:text-gray-400 transition"
-        />
-      </a>
-      <a
-        href="https://www.linkedin.com/company/technodevsweb/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="LinkedIn"
-      >
-        <FaLinkedin
-          className="text-white text-2xl hover:text-gray-400 transition"
-        />
-      </a>
-      <a
-        href="https://www.behance.net/technodevs"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Behance"
-      >
-        <FaSquareBehance
-          className="text-white text-2xl hover:text-gray-400 transition"
-        />
-      </a>
-    </div>
-    <div
-      id="hamburgerMenu"
-      class="lg:hidden flex flex-col px-2 py-3 border-solid border border-gray-600 rounded-md cursor-pointer hover:bg-bgDark2"
-    >
-      <div class="w-5 h-0.5 bg-gray-500 mb-1"></div>
-      <div class="w-5 h-0.5 bg-gray-500 mb-1"></div>
-      <div class="w-5 h-0.5 bg-gray-500"></div>
-    </div>
-  </div>
-
-  <!-- Mobile navbar -->
-  <div
-    id="mobileMenu"
-    class="flex flex-col mt-16 lg:hidden absolute top-4 left-0 bg-gray-950 backdrop-blur-md z-50 w-full items-center gap-10 pb-10 border-y border-solid border-bgDark3 pt-10 hidden"
-  >
-    {
-      navbarLinks.map(({ label, href, ariaLabel }) => (
+      {navbarLinks.map(({ href, label, ariaLabel }) => (
         <a
-          class="text-white lg:text-base text-2xl leading-6 mr-4 ml-4 2xl:mr-6 2xl:ml-6 cursor-pointer font-normal lg:font-medium hover:scale-110 transition duration-300 h-full pt-2"
+          class="text-white lg:text-base text-2xl leading-6 mr-4 ml-4 2xl:mr-6 2xl:ml-6 cursor-pointer font-normal lg:font-medium hover:scale-110 transition h-full pt-2"
           href={href}
           aria-label={ariaLabel}
         >
           {label}
         </a>
-      ))
-    }
-    <div class="flex gap-4">
-      <a
-        href="https://www.instagram.com/agencia.technodevs/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram"
-      >
-        <BiLogoInstagram
-          className="text-white text-2xl hover:text-gray-400 transition"
-        />
+      ))}
+    </div>
+    <div class="grow basis-0 justify-end hidden lg:flex gap-4">
+      <a href="https://www.instagram.com/agencia.technodevs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <BiLogoInstagram className="text-white text-2xl hover:text-gray-400 transition" />
       </a>
-      <a
-        href="https://www.linkedin.com/company/technodevsweb/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="LinkedIn"
-      >
-        <FaLinkedin
-          className="text-white text-2xl hover:text-gray-400 transition"
-        />
+      <a href="https://www.linkedin.com/company/technodevsweb/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <FaLinkedin className="text-white text-2xl hover:text-gray-400 transition" />
       </a>
-      <a
-        href="https://www.behance.net/technodevs"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Behance"
-      >
-        <FaSquareBehance
-          className="text-white text-2xl hover:text-gray-400 transition"
-        />
+      <a href="https://www.behance.net/technodevs" target="_blank" rel="noopener noreferrer" aria-label="Behance">
+        <FaSquareBehance className="text-white text-2xl hover:text-gray-400 transition" />
       </a>
     </div>
   </div>
 </nav>
 
 <script>
-  const navbar = document.getElementById("navbar");
-  const hamburgerMenu = document.getElementById("hamburgerMenu");
-  const mobileMenu = document.getElementById("mobileMenu");
+  document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.getElementById("navbar");
+    const isBlogPage = window.location.href.includes("posts");
 
-  // Change navbar background on scroll
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 0) {
-      navbar.classList.add("bg-gray-950/70", "backdrop-blur-md", "shadow-md");
-      navbar.classList.remove("bg-transparent");
+    if (isBlogPage) {
+      navbar.classList.add("bg-blackPrimary", "static");
+      navbar.classList.remove("fixed");
     } else {
-      navbar.classList.add("bg-transparent");
-      navbar.classList.remove(
-        "bg-gray-950/70",
-        "backdrop-blur-md",
-        "shadow-md"
-      );
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 0) {
+          navbar.classList.add("bg-gray-950/70", "backdrop-blur-md", "shadow-md");
+          navbar.classList.remove("bg-transparent");
+        } else {
+          navbar.classList.add("bg-transparent");
+          navbar.classList.remove("bg-gray-950/70", "backdrop-blur-md", "shadow-md");
+        }
+      });
     }
-  });
-
-  hamburgerMenu.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-    navbar.classList.add("bg-gray-950/70", "backdrop-blur-md", "shadow-md")
-  });
-
-  mobileMenu.addEventListener("click", () => {
-    mobileMenu.classList.add("hidden");
   });
 </script>

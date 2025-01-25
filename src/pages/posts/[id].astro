@@ -1,40 +1,50 @@
 ---
-// import Navbar from "@components/Navbar.astro";
 import Layout from "../../layouts/Layout.astro";
-import { fetchBlogPosts, fetchPostById } from "../../service/BlogService";
-export async function getStaticPaths() {
-    const posts = await fetchBlogPosts();
+import { getBlogPosts, getPostById } from "../../service/BlogService";
+import AvatarInfoContainer from "./AvatarInfoContainer.astro";
+import SubHeader from "./SubHeader.astro";
 
-    return posts.map((post) => ({
-        params: { id: post.id.toString() },
-    }));
+export async function getStaticPaths() {
+  const posts = await getBlogPosts();
+
+  return posts.map((post) => ({
+    params: { id: post.id.toString() },
+  }));
 }
 
 const { id } = Astro.params;
 
-const post = await fetchPostById(id);
+const post = await getPostById(id);
 
 if (!post) {
-    throw new Error("Post no encontrado");
+  throw new Error("Post no encontrado");
 }
 ---
 
 <Layout title={post.title}>
-    <!-- <Navbar /> -->
-    <article class="bg-bgDark2">
-        <div class="container mx-auto px-24 py-28 flex flex-col">
-            <h1 class="text-4xl font-bold mb-4 text-white py-2">
-                {post.title}
-            </h1>
-            <img
-                src={post.image}
-                alt={post.title}
-                class="rounded mb-4 w-full h-auto object-cover"
-            />
-            <div
-                class="text-lg text-secondaryText py-2 flex flex-col gap-4"
-                set:html={post.content}
-            />
-        </div>
-    </article>
+  <article class="bg-white">
+    <SubHeader post={post} />
+    <div class="container mx-auto px-4 lg:px-48 py-20 flex flex-col">
+      <h1 class="text-5xl font-bold text-black">
+        {post.title}
+      </h1>
+      <h4 class="text-2xl text-gray-900 my-5">{post.subtitle}</h4>
+      <img
+        src={post.image}
+        alt={post.title}
+        class="rounded-lg my-4 w-full h-auto object-cover"
+      />
+      <div class="flex flex-col gap-4">
+        <span class="text-gray-500 self-start">
+          {post.date}
+        </span>
+        <div class="w-full h-[1px] bg-gray-300"></div>
+        <AvatarInfoContainer author={post.author} />
+      </div>
+      <div
+        class="text-lg text-black py-5 flex flex-col gap-4"
+        set:html={post.content}
+      />
+    </div>
+  </article>
 </Layout>
