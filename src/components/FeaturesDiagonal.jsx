@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { fetchProjectsWithCategories } from "../service/ProjectsService";
 import net from "../assets/icons/net.png";
 import dev from "../assets/icons/develop.png";
 import rocket from "../assets/icons/rocket.png";
+import { getProjects } from "../service/ProjectsService";
 
 
 const SkeletonCard = () => (
@@ -18,34 +18,32 @@ const SkeletonCard = () => (
 
 const ProjectGallery = () => {
   const [projects, setProjects] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("ALL");
   const [filteredProjects, setFilteredProjects] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const categories = [
-    { id: "All", name: "Todo" },
-    { id: "10", name: "Web" },
-    { id: "12", name: "Diseño" },
+    { id: "ALL", name: "Todo" },
+    { id: "WEB", name: "Web" },
+    { id: "DES", name: "Diseño" },
   ];
 
-  // Fetch projects on component mount
   useEffect(() => {
     const fetchProjects = async () => {
       setIsLoading(true);
-      const data = await fetchProjectsWithCategories();
+      const data = await getProjects();
       setProjects(data);
       setIsLoading(false);
     };
     fetchProjects();
   }, []);
 
-  // Update filtered projects when selectedCategory or projects change
   useEffect(() => {
-    if (selectedCategory === "All") {
+    if (selectedCategory === "ALL") {
       setFilteredProjects(projects);
     } else {
-      const filtered = projects.filter((project) =>
-        project.categories.includes(parseInt(selectedCategory))
+      const filtered = projects.filter((project) => 
+        project.categories.includes(selectedCategory)
       );
       setFilteredProjects(filtered);
     }
@@ -121,7 +119,7 @@ const ProjectGallery = () => {
               className="backdrop-blur-lg bg-[rgba(3,7,18,0.4)] group border hover:cursor-pointer border-gray-600 rounded-lg overflow-hidden project-card"
             >
               <img
-                src={project.image}
+                src={project.img}
                 alt={project.title}
                 className="w-full h-48 object-cover"
               />

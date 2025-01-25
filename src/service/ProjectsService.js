@@ -1,67 +1,22 @@
-export async function fetchProjectsWithCategories() {
-    try {
-        const response = await fetch(
-            `https://technodevs.com.ar/wp-json/wp/v2/posts?categories=10,11,12&per_page=100`
-        );
+import PocketBase from 'pocketbase';
 
-        if (!response.ok) {
-            throw new Error(`Error al obtener los proyectos: ${response.status} ${response.statusText}`);
-        }
+const CONTENT_URL = import.meta.env.PUBLIC_CONTENT_URL;
+const COLLECTION_NAME = "posts"
 
-        const posts = await response.json();
+const pb = new PocketBase(CONTENT_URL);
 
-        if (!Array.isArray(posts)) {
-            throw new Error("La respuesta de la API no es un array");
-        }
-
-        const postsWithDetails = await Promise.all(
-            posts.map(async (post) => {
-                let imageUrl = 'default-image.png';
-
-                if (post.featured_media) {
-                    const mediaResponse = await fetch(
-                        `https://technodevs.com.ar/wp-json/wp/v2/media/${post.featured_media}`
-                    );
-
-                    if (mediaResponse.ok) {
-                        const media = await mediaResponse.json();
-                        imageUrl = media.source_url || imageUrl;
-                    } else {
-                        console.warn(`Error al obtener la imagen: ${mediaResponse.status} ${mediaResponse.statusText}`);
-                    }
-                }
-
-                return {
-                    id: post.id,
-                    title: post.title.rendered,
-                    description: post.excerpt.rendered,
-                    image: imageUrl,
-                    categories: post.categories,
-                    url: post.link
-                };
-            })
-        );
-
-        return postsWithDetails;
-    } catch (error) {
-        console.error("Error al obtener los proyectos:", error);
-        return [];
-    }
+export const getProjects = async () => {
+    const records = await pb.collection(COLLECTION_NAME).getFullList({
+        sort: '-created',
+    });
+    const parsedRecords = records.map((record) => ({
+        ...record,
+        img: getFileUrl(COLLECTION_NAME, record.id, record.field),
+    }));
+    return parsedRecords;
 }
 
-export async function fetchGroupedProjects() {
-    const projects = await fetchProjectsWithCategories();
-
-    // Agrupa los proyectos por categorías
-    const groupedProjects = projects.reduce((acc, project) => {
-        project.categories.forEach((categoryId) => {
-            if (!acc[categoryId]) {
-                acc[categoryId] = [];
-            }
-            acc[categoryId].push(project);
-        });
-        return acc;
-    }, {});
-
-    return groupedProjects;
+export const getFileUrl = (collectionName, recordId, fileName) => {
+    const url = `${CONTENT_URL}/api/files/${collectionName}/${recordId}/${fileName}`;
+    return url;
 }
