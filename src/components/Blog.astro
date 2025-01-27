@@ -33,12 +33,12 @@ const showMore = posts.length > 3;
         visiblePosts.map((post, index) => (
           <a
             href={`/posts/${post.id}`}
-            class="bg-[rgba(48,49,54,0.7)] rounded-3xl flex flex-col border-[1px] border-[rgba(255,255,255,0.2)] max-h-[470px] overflow-hidden text-white"
+            class="bg-[rgba(48,49,54,0.7)] rounded-3xl flex flex-col border-[1px] border-[rgba(255,255,255,0.2)] max-h-[485px] overflow-hidden text-white"
           >
             <img
               src={post.image}
               alt={post.title}
-              class="w-full h-64 object-cover rounded-t-3xl"
+              class="w-full min-h-64 object-cover rounded-t-3xl"
             />
             <div class="p-6">
               <h3 class="text-2xl font-semibold text-primaryText mb-4">

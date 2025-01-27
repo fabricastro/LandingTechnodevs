@@ -3,7 +3,7 @@ import net from "../assets/icons/net.png";
 import dev from "../assets/icons/develop.png";
 import rocket from "../assets/icons/rocket.png";
 import { getProjects } from "../service/ProjectsService";
-
+import { motion, AnimatePresence } from "framer-motion";
 
 const SkeletonCard = () => (
   <div className="animate-pulse backdrop-blur-lg bg-[rgba(3,7,18,0.4)] border border-gray-600 rounded-lg overflow-hidden">
@@ -21,6 +21,8 @@ const ProjectGallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("ALL");
   const [filteredProjects, setFilteredProjects] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [visibleCount, setVisibleCount] = useState(9);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const categories = [
     { id: "ALL", name: "Todo" },
@@ -36,18 +38,37 @@ const ProjectGallery = () => {
       setIsLoading(false);
     };
     fetchProjects();
+
+    const handleResize = () => {
+      const initialCount = window.innerWidth < 768 ? 4 : 9;
+      setVisibleCount(initialCount);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
+
 
   useEffect(() => {
     if (selectedCategory === "ALL") {
       setFilteredProjects(projects);
     } else {
-      const filtered = projects.filter((project) => 
+      const filtered = projects.filter((project) =>
         project.categories.includes(selectedCategory)
       );
       setFilteredProjects(filtered);
     }
   }, [selectedCategory, projects]);
+
+  const handleShowMore = () => {
+    setVisibleCount(filteredProjects.length);
+    setIsExpanded(true);
+  };
+
+  const handleShowLess = () => {
+    setVisibleCount(window.innerWidth < 768 ? 4 : 9);
+    setIsExpanded(false);
+  };
 
   return (
     <section id="projects" className="w-full relative flex flex-col justify-center items-center bg-gradient-to-b from-bgDark2 to-bgDark1 py-12 border-y-[1px] border-bgDark3">
@@ -105,39 +126,62 @@ const ProjectGallery = () => {
       {/* Galería de Proyectos */}
       <div
         id="project-gallery"
-        className="w-full max-w-screen-lg mx-auto pt-12 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4 h-[340px]"
+        className="w-full max-w-screen-lg mx-auto pt-12 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4 "
       >
-        {isLoading
-          ? Array.from({ length: 2 }).map((_, index) => (
-            <SkeletonCard key={index} />
-          ))
-          : filteredProjects.map((project) => (
-            <a
-              href={project.url}
-              target="_blank"
-              key={project.id}
-              className="backdrop-blur-lg bg-[rgba(3,7,18,0.4)] group border hover:cursor-pointer border-gray-600 rounded-lg overflow-hidden project-card"
-            >
-              <img
-                src={project.img}
-                alt={project.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  {project.title}
-                </h3>
-                {project.description ? (
+        <AnimatePresence>
+          {isLoading
+            ? Array.from({ length: visibleCount }).map((_, index) => (
+              <SkeletonCard key={index} />
+            ))
+            : filteredProjects.slice(0, visibleCount).map((project) => (
+              <motion.a
+                key={project.id}
+                href={project.url}
+                target="_blank"
+                className="backdrop-blur-lg bg-[rgba(3,7,18,0.4)] border border-gray-600 rounded-lg overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}
+              >
+                <img
+                  src={project.img}
+                  alt={project.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-4">
+                  <h3 className="text-xl font-semibold text-white mb-2">
+                    {project.title}
+                  </h3>
                   <p
                     className="text-secondaryText"
-                    dangerouslySetInnerHTML={{ __html: project.description }}
+                    dangerouslySetInnerHTML={{
+                      __html: project.description || "Descripción no disponible.",
+                    }}
                   ></p>
-                ) : (
-                  <p className="text-secondaryText">Descripción no disponible.</p>
-                )}
-              </div>
-            </a>
-          ))}
+                </div>
+              </motion.a>
+            ))}
+        </AnimatePresence>
+      </div>
+
+      <div className="mt-8 flex space-x-4">
+        {filteredProjects.length > visibleCount && !isExpanded && (
+          <button
+            onClick={handleShowMore}
+            className="px-6 py-2 bg-primary-700 text-white rounded-lg transition-all hover:bg-primary-800"
+          >
+            Ver más
+          </button>
+        )}
+        {isExpanded && (
+          <button
+            onClick={handleShowLess}
+            className="px-6 py-2 bg-gray-700 text-white rounded-lg transition-all hover:bg-gray-800"
+          >
+            Ver menos
+          </button>
+        )}
       </div>
     </section>
   );
