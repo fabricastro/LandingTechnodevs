@@ -1,20 +1,19 @@
 ---
-import AvatarInfoContainer from "../../components/AvatarInfoContainer.astro";
-import SubHeader from "../../components/SubHeader.astro";
+export const prerender = false
+import AvatarInfoContainer from "../../components/blog/AvatarInfoContainer.astro";
+import SubHeader from "../../components/blog/SubHeader.astro";
 import Layout from "../../layouts/Layout.astro";
-import { getBlogPosts, getPostById } from "../../service/BlogService";
-
-export async function getStaticPaths() {
-  const posts = await getBlogPosts();
-
-  return posts.map((post) => ({
-    params: { id: post.id.toString() },
-  }));
-}
+import { getPostById } from "../../service/BlogService";
 
 const { id } = Astro.params;
 
-const post = await getPostById(id);
+let post;
+try {
+  post = await getPostById(id);
+} catch (error) {
+  post = null;
+}
+
 if (!post) {
   throw new Error("Post no encontrado");
 }
