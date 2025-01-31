@@ -11,67 +11,107 @@ const otherPosts = posts.slice(1, 4);
 const showMore = posts.length > 4;
 ---
 
-<section class="w-full flex justify-center py-16 bg-white relative overflow-hidden px-4" id="blog">
+<div class="text-md bg-gray-800 text-white w-full text-center py-2 flex justify-between">
+    <div class="container mx-auto px-4 lg:px-32 flex gap-4">
+        <span>🔥🔥En tendencias </span>
+        <span>
+            -
+        </span>
+        <span><a href={`/posts/${latestPost.id}`}>{latestPost.title}</a></span>
+    </div>
+</div>
+<section
+    class="w-full flex justify-center py-16 bg-white relative overflow-hidden px-4"
+    id="blog"
+>
     <div class="container flex flex-col lg:flex-row gap-8">
         <!-- Main Blog Section -->
         <div class="w-full lg:w-3/4">
-            <div class="justify-center flex flex-col lg:text-left mb-8 mx-auto">
-                <h2 class="mt-4 mb-4 text-3xl md:text-4xl lg:text-5xl font-bold text-bgDark1 text-center">
-                    Nuestro <span class="text-secondaryColor"> Blog </span>
-                </h2>
-                <p class="text-center text-xs text-white tracking-wider font-bold uppercase">
-                    Mantente actualizado con los últimos posteos de nuestro blog
-                </p>
-            </div>
-            
             <!-- Latest Post -->
-            <a href={`/posts/${latestPost.id}`} class="block bg-bgDark1 rounded-3xl border-2 border-bgDark1 text-white overflow-hidden mb-8">
-                <img src={latestPost.image} alt={latestPost.title} class="w-full h-96 object-cover rounded-t-3xl" />
+            <a
+                href={`/blog/${latestPost.id}`}
+                class="block border rounded-3xl shadow-lg text-bgDark1 overflow-hidden mb-8"
+            >
+                <img
+                    src={latestPost.image}
+                    alt={latestPost.title}
+                    class="w-full h-96 object-cover rounded-t-1xl"
+                />
                 <div class="p-6">
-                    <h3 class="text-3xl font-semibold text-primaryText mb-4">{latestPost.title}</h3>
-                    <p class="text-white" set:html={latestPost.subtitle} />
+                    <h3 class="text-3xl font-semibold text-bgDark1 mb-4">
+                        {latestPost.title}
+                    </h3>
+                    <p class="text-bgDark1" set:html={latestPost.subtitle} />
                 </div>
             </a>
-            
+
             <!-- Other Posts Grid -->
             <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                {otherPosts.map((post) => (
-                    <a href={`/posts/${post.id}`} class="bg-bgDark1 rounded-3xl flex flex-col border-2 border-bgDark1 text-white overflow-hidden">
-                        <img src={post.image} alt={post.title} class="w-full h-64 object-cover rounded-t-3xl" />
-                        <div class="p-6">
-                            <h3 class="text-2xl font-semibold text-primaryText mb-4">{post.title}</h3>
-                            <p class="text-white" set:html={post.subtitle} />
-                        </div>
-                    </a>
-                ))}
+                {
+                    otherPosts.map((post) => (
+                        <a
+                            href={`/blog/${post.id}`}
+                            class="rounded-3xl flex flex-col shadow-lg border text-white overflow-hidden"
+                        >
+                            <img
+                                src={post.image}
+                                alt={post.title}
+                                class="w-full h-64 object-cover rounded-t-3xl"
+                            />
+                            <div class="p-6">
+                                <h3 class="text-2xl font-semibold text-bgDark1 mb-4">
+                                    {post.title}
+                                </h3>
+                                <p
+                                    class="text-bgDark1"
+                                    set:html={post.subtitle}
+                                />
+                            </div>
+                        </a>
+                    ))
+                }
             </div>
 
             <!-- "Ver Más" Button -->
-            {showMore && (
-                <div class="flex justify-center mt-8">
-                    <a href="/blog" class="bg-primaryText text-white py-2 px-6 rounded-full font-semibold transition hover:bg-primaryTextHover">
-                        Ver más
-                    </a>
-                </div>
-            )}
+            {
+                showMore && (
+                    <div class="flex justify-center mt-8">
+                        <a
+                            href="/blog"
+                            class="bg-primaryText text-white py-2 px-6 rounded-full font-semibold transition hover:bg-primaryTextHover"
+                        >
+                            Ver más
+                        </a>
+                    </div>
+                )
+            }
         </div>
-        
+
         <!-- Sidebar -->
         <aside class="w-full lg:w-1/4 bg-gray-100 p-6 rounded-xl">
             <h3 class="text-xl font-bold text-bgDark1 mb-4">Categorías</h3>
             <ul>
-                {categoriesWithPosts.map(category => (
-                    <li class="mb-4">
-                        <h4 class="text-lg font-semibold">{category.name}</h4>
-                        <ul class="ml-2">
-                            {category.posts.map(post => (
-                                <li>
-                                    <a href={`/posts/${post.id}`} class="text-blue-500 hover:underline">{post.title}</a>
-                                </li>
-                            ))}
-                        </ul>
-                    </li>
-                ))}
+                {
+                    categoriesWithPosts.map((category) => (
+                        <li class="mb-4">
+                            <h4 class="text-lg font-semibold">
+                                {category.name}
+                            </h4>
+                            <ul class="">
+                                {category.posts.map((post) => (
+                                    <li class="mb-2">
+                                        <a
+                                            href={`/blog/${post.id}`}
+                                            class="text-blue-500 hover:underline"
+                                        >
+                                            {post.title}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </li>
+                    ))
+                }
             </ul>
         </aside>
     </div>

@@ -3,7 +3,7 @@
     "type": "web",
     "plan": "basic",
     "title": "Landing Page",
-    "price": "$300.000 ARS",
+    "price": "Consultar",
     "description": "Desde",
     "features": [
       "Diseño limpio y profesional.",
@@ -18,7 +18,7 @@
     "type": "web",
     "plan": "standard",
     "title": "Sitio Institucional",
-    "price": "$500.000 ARS",
+    "price": "Consultar",
     "description": "Desde",
     "features": [
       "Hasta 5 secciones personalizadas (Inicio, Nosotros, Servicios, etc.).",
@@ -33,7 +33,7 @@
     "type": "web",
     "plan": "standard",
     "title": "Tienda Online",
-    "price": "$800.000 ARS",
+    "price": "Consultar",
     "description": "Desde",
     "features": [
       "Catálogo autogestionable de productos.",
@@ -93,7 +93,7 @@
     "type": "other",
     "plan": "basic",
     "title": "Chatbot con IA",
-    "price": "$120.000 ARS",
+    "price": "Consultar",
     "description": "Desde",
     "features": [
       "Atención 24/7 con IA avanzada.",
@@ -108,7 +108,7 @@
     "type": "other",
     "plan": "premium",
     "title": "Chatbot Atención Virtual",
-    "price": "$60.000 ARS",
+    "price": "Consultar",
     "description": "Desde",
     "features": [
       "Brinda información sobre productos y servicios.",
