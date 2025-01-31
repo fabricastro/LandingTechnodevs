@@ -1,11 +1,21 @@
 ---
-const post = Astro.props.post ?? { categorie: 'Sin categoría' };
+const post = Astro.props.post ?? { categories: [{id: 1, name: "Sin categoría"}] };
+type Categorie = {id: number, name: string};
 ---
 
 <div class="text-md bg-gray-800 text-white w-full text-center py-2 flex justify-between">
   <div class="container mx-auto px-4 lg:px-32 flex gap-4">
       <span>📖Blog</span>
       <span>/</span>
-      <span>{post.categorie}</span>
+      <span
+        >{
+          post.categories.map((category: Categorie, index: number) => (
+            <span>
+              {category.name}
+              {index < post.categories.length - 1 && ", "}
+            </span>
+          ))
+        }
+      </span>
   </div>
 </div>
