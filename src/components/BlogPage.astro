@@ -7,8 +7,7 @@ const posts = await getBlogPosts();
 const categoriesWithPosts = await getCategoriesWithPosts();
 
 const latestPost = posts[0];
-const otherPosts = posts.slice(1, 4);
-const showMore = posts.length > 4;
+const otherPosts = posts.slice(1);
 ---
 
 <div class="text-md bg-gray-800 text-white w-full text-center py-2 flex justify-between">
@@ -17,7 +16,7 @@ const showMore = posts.length > 4;
         <span>
             -
         </span>
-        <span><a class="hover:underline" href={`/posts/${latestPost.id}`}>{latestPost.title}</a></span>
+        <span><a class="hover:underline" href={`/blog/${latestPost.id}`}>{latestPost.title}</a></span>
     </div>
 </div>
 <section
