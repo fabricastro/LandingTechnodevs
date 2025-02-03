@@ -1,15 +1,14 @@
 ---
 export const prerender = false;
-import { FaTwitter, FaWhatsapp } from "react-icons/fa";
+import Layout from "../../layouts/Layout.astro";
 import AvatarInfoContainer from "../../components/blog/AvatarInfoContainer.astro";
 import SubHeader from "../../components/blog/SubHeader.astro";
-import Layout from "../../layouts/Layout.astro";
 import { getPostById } from "../../service/BlogService";
-import { FaFacebook } from "react-icons/fa6";
+import { FaTwitter, FaWhatsapp, FaFacebook } from "react-icons/fa";
 
 const { id } = Astro.params;
-
 let post;
+
 try {
   post = await getPostById(id);
 } catch (error) {
@@ -21,57 +20,41 @@ if (!post) {
 }
 
 const postUrl = `https://www.technodevs.com.ar/blog/${id}`;
-const postTitle = encodeURIComponent(post.title);
+const postTitle = post.title;
+const postDescription = post.subtitle || "Lee este interesante artículo en nuestro blog.";
+const postImage = post.image;
 
 const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}`;
-const whatsappShareUrl = `https://api.whatsapp.com/send?text=${postTitle}%20${encodeURIComponent(postUrl)}`;
-const twitterShareUrl = `https://twitter.com/intent/tweet?text=${postTitle}&url=${encodeURIComponent(postUrl)}`;
+const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(postTitle + " " + postUrl)}`;
+const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(postTitle)}&url=${encodeURIComponent(postUrl)}`;
 ---
 
-<Layout title={post.title}>
+<Layout 
+  title={postTitle} 
+  description={postDescription} 
+  image={postImage} 
+  url={postUrl}
+>
   <article class="bg-white">
     <SubHeader post={post} />
     <div class="container mx-auto px-4 lg:px-48 py-20 flex flex-col">
-      <h1 class="text-5xl font-bold text-black">
-        {post.title}
-      </h1>
+      <h1 class="text-5xl font-bold text-black">{post.title}</h1>
       <h4 class="text-2xl text-gray-900 my-5">{post.subtitle}</h4>
-      <img
-        src={post.image}
-        alt={post.title}
-        class="rounded-lg my-4 w-full h-auto object-cover"
-      />
+      <img src={post.image} alt={post.title} class="rounded-lg my-4 w-full h-auto object-cover" />
       <div class="flex flex-col gap-4">
-        <span class="text-gray-500 self-start">
-          {post.date}
-        </span>
+        <span class="text-gray-500 self-start">{post.date}</span>
         <div class="w-full h-[1px] bg-gray-300"></div>
         <AvatarInfoContainer author={post.author} />
       </div>
-      <div
-        class="text-lg text-black py-5 flex flex-col gap-4"
-        set:html={post.content}
-      />
+      <div class="text-lg text-black py-5 flex flex-col gap-4" set:html={post.content} />
       <div class="flex flex-row gap-4 text-white mt-8">
-        <a
-          class="flex shadow-lg p-4 items-center rounded-xl gap-2 bg-[#3b5998]"
-          href={facebookShareUrl}
-          target="_blank"
-        >
+        <a class="flex shadow-lg p-4 items-center rounded-xl gap-2 bg-[#3b5998]" href={facebookShareUrl} target="_blank">
           <FaFacebook /> Compartir
         </a>
-        <a
-          class="flex shadow-lg p-4 items-center rounded-xl gap-2 bg-[#25d366]"
-          href={whatsappShareUrl}
-          target="_blank"
-        >
+        <a class="flex shadow-lg p-4 items-center rounded-xl gap-2 bg-[#25d366]" href={whatsappShareUrl} target="_blank">
           <FaWhatsapp /> Compartir
         </a>
-        <a
-          class="flex shadow-lg p-4 items-center rounded-xl gap-2 bg-[#1da1f2]"
-          href={twitterShareUrl}
-          target="_blank"
-        >
+        <a class="flex shadow-lg p-4 items-center rounded-xl gap-2 bg-[#1da1f2]" href={twitterShareUrl} target="_blank">
           <FaTwitter /> Compartir
         </a>
       </div>

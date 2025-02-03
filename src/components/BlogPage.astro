@@ -13,11 +13,11 @@ const showMore = posts.length > 4;
 
 <div class="text-md bg-gray-800 text-white w-full text-center py-2 flex justify-between">
     <div class="container mx-auto px-4 lg:px-32 flex gap-4">
-        <span>🔥🔥En tendencias </span>
+        <span>🔥 En tendencias</span>
         <span>
             -
         </span>
-        <span><a href={`/posts/${latestPost.id}`}>{latestPost.title}</a></span>
+        <span><a class="hover:underline" href={`/posts/${latestPost.id}`}>{latestPost.title}</a></span>
     </div>
 </div>
 <section
@@ -25,9 +25,7 @@ const showMore = posts.length > 4;
     id="blog"
 >
     <div class="container flex flex-col lg:flex-row gap-8">
-        <!-- Main Blog Section -->
         <div class="w-full lg:w-3/4">
-            <!-- Latest Post -->
             <a
                 href={`/blog/${latestPost.id}`}
                 class="block border rounded-3xl shadow-lg text-bgDark1 overflow-hidden mb-8"
@@ -45,7 +43,6 @@ const showMore = posts.length > 4;
                 </div>
             </a>
 
-            <!-- Other Posts Grid -->
             <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 {
                     otherPosts.map((post) => (
@@ -71,23 +68,8 @@ const showMore = posts.length > 4;
                     ))
                 }
             </div>
-
-            <!-- "Ver Más" Button -->
-            {
-                showMore && (
-                    <div class="flex justify-center mt-8">
-                        <a
-                            href="/blog"
-                            class="bg-primaryText text-white py-2 px-6 rounded-full font-semibold transition hover:bg-primaryTextHover"
-                        >
-                            Ver más
-                        </a>
-                    </div>
-                )
-            }
         </div>
 
-        <!-- Sidebar -->
         <aside class="w-full lg:w-1/4 bg-gray-100 p-6 rounded-xl">
             <h3 class="text-xl font-bold text-bgDark1 mb-4">Categorías</h3>
             <ul>
@@ -99,10 +81,10 @@ const showMore = posts.length > 4;
                             </h4>
                             <ul class="">
                                 {category.posts.map((post) => (
-                                    <li class="mb-2">
+                                    <li class="mb-1">
                                         <a
                                             href={`/blog/${post.id}`}
-                                            class="text-blue-500 hover:underline"
+                                            class="text-blue-500 hover:underline line-clamp-1"
                                         >
                                             {post.title}
                                         </a>
