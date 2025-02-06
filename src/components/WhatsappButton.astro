@@ -1,0 +1,26 @@
+---
+const phoneNumber = "5492646270803";
+const message = "Hola, me gustaría obtener más información.";
+const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+---
+
+<a 
+  href={whatsappLink} 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  class="fixed z-[101] bottom-4 right-4 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center w-14 h-14 opacity-0 animate-fade-in">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.17 1.6 5.967L0 24l6.248-1.581C8.01 23.197 10.048 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.847 0-3.657-.499-5.228-1.444l-.374-.225-3.715.939.998-3.563-.247-.384A9.879 9.879 0 0 1 2 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10zm5.59-7.504c-.291-.147-1.719-.848-1.985-.943-.266-.095-.461-.147-.656.147-.196.293-.752.943-.923 1.138-.17.196-.34.22-.631.073-.291-.147-1.23-.455-2.344-1.452-.865-.77-1.45-1.72-1.621-2.012-.17-.293-.019-.45.128-.595.132-.132.291-.34.437-.509.147-.17.196-.293.291-.486.098-.196.049-.366-.024-.512-.073-.146-.656-1.58-.9-2.17-.237-.569-.477-.492-.656-.5-.17-.009-.366-.011-.56-.011a1.1 1.1 0 0 0-.797.366c-.266.293-1.016.993-1.016 2.417 0 1.425 1.04 2.802 1.186 2.995.146.195 2.052 3.132 5.03 4.375.702.302 1.25.483 1.677.618.705.224 1.344.193 1.85.117.564-.086 1.719-.703 1.961-1.384.241-.681.241-1.263.17-1.384-.073-.121-.266-.193-.556-.34z"/>
+  </svg>
+</a>
+
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+</style>

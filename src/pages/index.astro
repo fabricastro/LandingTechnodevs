@@ -9,6 +9,7 @@ import Blog  from '../components/Blog.astro'
 import  Splash  from '../components/splash.astro'
 import '../styles/Theme.css'
 import '../styles/Diagonals.css'
+import WhatsappButton from '../components/WhatsappButton.astro'
 ---
 
 <Layout title="Technodevs - Desarrollo Web y Social Media en San Juan">
@@ -19,4 +20,5 @@ import '../styles/Diagonals.css'
   <Brands />
   <Blog server:defer/>
   <FAQ client:load /> 
+  <WhatsappButton />
 </Layout>
