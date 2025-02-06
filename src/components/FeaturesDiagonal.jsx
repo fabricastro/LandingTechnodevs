@@ -169,17 +169,20 @@ const ProjectGallery = () => {
         {filteredProjects.length > visibleCount && !isExpanded && (
           <button
             onClick={handleShowMore}
-            className="px-6 py-2 bg-primary-700 text-white rounded-lg transition-all hover:bg-primary-800"
+            className="primary-button"
           >
-            Ver más
+            <span>
+              Ver más
+            </span>
           </button>
         )}
         {isExpanded && (
           <button
             onClick={handleShowLess}
-            className="px-6 py-2 bg-gray-700 text-white rounded-lg transition-all hover:bg-gray-800"
-          >
-            Ver menos
+            className="w-32 primary-button ">
+              <span>
+                Ver menos
+              </span>
           </button>
         )}
       </div>

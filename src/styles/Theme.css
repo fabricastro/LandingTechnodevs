@@ -37,6 +37,13 @@
   @apply text-primaryText main-border-gray rounded-xl bg-bgDark2 hover:bg-bgDark3  border-gray-700 text-sm;
 }
 
+.primary-button {
+  @apply min-w-[100px] h-[50px] rounded-full p-[2px] bg-gradient-to-r from-primaryColor to-secondary-200 bg-[length:200%_200%] bg-[0%_0%] hover:bg-[100%_0%] transition-all duration-200 ease-out;
+  span {
+    @apply flex items-center justify-center w-full h-full bg-[#03041f] text-white rounded-full;
+  }
+}
+
 .gradient-text {
   @apply bg-clip-text text-transparent;
   background-image: linear-gradient(to right, #818cf8, #c7d2fe 50%, #bcee22 140%);
