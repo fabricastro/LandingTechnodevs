@@ -47,14 +47,15 @@ const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURICompon
         <AvatarInfoContainer author={post.author} />
       </div>
       <div class="text-lg text-black py-5 flex flex-col gap-4" set:html={post.content} />
-      <div class="flex flex-row gap-4 text-white mt-8">
-        <a class="flex shadow-lg p-4 items-center rounded-xl gap-2 bg-[#3b5998]" href={facebookShareUrl} target="_blank">
+      <h5 class="text-xl font-medium mt-4">Compartir en las redes sociales</h5>
+      <div class="flex flex-row gap-2 text-white mt-4">
+        <a class="flex shadow-lg p-2 items-center rounded-xl gap-1 bg-[#3b5998]" href={facebookShareUrl} target="_blank">
           <FaFacebook /> Compartir
         </a>
-        <a class="flex shadow-lg p-4 items-center rounded-xl gap-2 bg-[#25d366]" href={whatsappShareUrl} target="_blank">
+        <a class="flex shadow-lg p-2 items-center rounded-xl gap-1 bg-[#25d366]" href={whatsappShareUrl} target="_blank">
           <FaWhatsapp /> Compartir
         </a>
-        <a class="flex shadow-lg p-4 items-center rounded-xl gap-2 bg-[#1da1f2]" href={twitterShareUrl} target="_blank">
+        <a class="flex shadow-lg p-2 items-center rounded-xl gap-1 bg-[#1da1f2]" href={twitterShareUrl} target="_blank">
           <FaTwitter /> Compartir
         </a>
       </div>
