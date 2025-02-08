@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Copia los archivos de la aplicación
 COPY package.json package-lock.json ./
-RUN npm install --production
+RUN npm install
 
 # Copia el resto de los archivos de la aplicación
 COPY . .
