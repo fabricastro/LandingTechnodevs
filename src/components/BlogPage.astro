@@ -11,12 +11,15 @@ const otherPosts = posts.slice(1);
 ---
 
 <div class="text-md bg-gray-800 text-white w-full text-center py-2 flex justify-between">
-    <div class="container mx-auto px-4 lg:px-32 flex gap-4">
-        <span>🔥 En tendencias</span>
+    <div class="container mx-auto px-4 lg:px-32 flex gap-1 items-center">
+        <span class="hidden sm:inline relative">🔥 En tendencias</span>
+        <span class="visible sm:hidden">🔥</span>
         <span>
             -
         </span>
-        <span><a class="hover:underline" href={`/blog/${latestPost.id}`}>{latestPost.title}</a></span>
+        <span class="whitespace-nowrap overflow-hidden text-ellipsis">
+            <a class="hover:underline" href={`/blog/${latestPost.id}`}>{latestPost.title}</a>
+        </span>
     </div>
 </div>
 <section
@@ -32,13 +35,16 @@ const otherPosts = posts.slice(1);
                 <img
                     src={latestPost.image}
                     alt={latestPost.title}
-                    class="w-full h-96 object-cover rounded-t-1xl"
+                    class="w-full h-64 md:h-96 object-cover rounded-t-1xl"
                 />
                 <div class="p-6">
-                    <h3 class="text-3xl font-semibold text-bgDark1 mb-4">
+                    <h3 class="text-xl sm:text-3xl font-semibold text-bgDark1 mb-4 line-clamp-2">
                         {latestPost.title}
                     </h3>
-                    <p class="text-bgDark1" set:html={latestPost.subtitle} />
+                    <p class="text-bgDark1 mb-2 line-clamp-3" set:html={latestPost.subtitle} />
+                    <span class="text-blue-600 hover:underline font-semibold cursor-pointer">
+                        Leer más →
+                    </span>
                 </div>
             </a>
 
@@ -47,21 +53,24 @@ const otherPosts = posts.slice(1);
                     otherPosts.map((post) => (
                         <a
                             href={`/blog/${post.id}`}
-                            class="rounded-3xl flex flex-col shadow-lg border text-white overflow-hidden"
+                            class="rounded-3xl flex flex-col shadow-lg border overflow-hidden"
                         >
                             <img
                                 src={post.image}
                                 alt={post.title}
                                 class="w-full h-64 object-cover rounded-t-3xl"
                             />
-                            <div class="p-6">
-                                <h3 class="text-2xl font-semibold text-bgDark1 mb-4">
+                            <div class="p-6 flex flex-col flex-1">
+                                <h3 class="text-xl sm:text-2xl font-semibold text-bgDark1 mb-4 line-clamp-2">
                                     {post.title}
                                 </h3>
                                 <p
-                                    class="text-bgDark1"
+                                    class="text-bgDark1 line-clamp-3"
                                     set:html={post.subtitle}
                                 />
+                                <span class="mt-4 text-blue-600 hover:underline font-semibold cursor-pointer">
+                                    Leer más →
+                                </span>
                             </div>
                         </a>
                     ))

@@ -37,9 +37,9 @@ const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURICompon
 >
   <article class="bg-white">
     <SubHeader post={post} />
-    <div class="container mx-auto px-4 lg:px-48 py-20 flex flex-col">
-      <h1 class="text-5xl font-bold text-black">{post.title}</h1>
-      <h4 class="text-2xl text-gray-900 my-5">{post.subtitle}</h4>
+    <div class="container mx-auto px-4 lg:px-48 py-10 sm:py-20 flex flex-col">
+      <h1 class="text-2xl md:text-5xl font-bold text-black">{post.title}</h1>
+      <h4 class="text-lg md:text-2xl text-gray-900 my-5">{post.subtitle}</h4>
       <img src={post.image} alt={post.title} class="rounded-lg my-4 w-full h-auto object-cover" />
       <div class="flex flex-col gap-4">
         <span class="text-gray-500 self-start">{post.date}</span>
@@ -59,6 +59,29 @@ const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURICompon
           <FaTwitter /> Compartir
         </a>
       </div>
+      <div class="bg-gradient-to-r from-[#03041f] to-primaryColor text-white rounded-3xl p-8 shadow-lg text-center mt-8">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4">🚀 ¿Listo para llevar tu empresa al siguiente nivel?</h2>
+        <p class="text-lg mb-6">En <span class="font-semibold">Technodevs</span>, diseñamos estrategias a medida para empresas que quieren liderar, no seguir.</p>
+        
+        <div class="space-y-4">
+            <a href="https://calendly.com/agenciatechnodevs/30min" target="_blank" class="block bg-white text-blue-600 font-semibold py-3 px-6 rounded-xl hover:bg-gray-200 transition">
+                👉 Reserva una consultoría gratuita en 1 clic
+            </a>
+            <a href="https://wa.me/5492646270803?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n." target="_blank" class="block bg-green-500 text-white font-semibold py-3 px-6 rounded-xl hover:bg-green-600 transition">
+                👉 Contactar por WhatsApp
+            </a>
+        </div>
+
+        <div class="mt-6 text-left bg-white/10 p-4 rounded-lg">
+            <h3 class="text-xl font-semibold mb-3">¿Qué lograrás en esta consultoría?</h3>
+            <ul class="space-y-2 text-base">
+                <li>✔️ Análisis personalizado de tus oportunidades de crecimiento.</li>
+                <li>✔️ Estrategias concretas adaptadas a tus objetivos.</li>
+                <li>✔️ Respuestas claras a tus preguntas críticas.</li>
+            </ul>
+      </div>
+    </div>
+
     </div>
   </article>
 </Layout>
