@@ -25,7 +25,7 @@ const ProjectGallery = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const categories = [
-    { id: "ALL", name: "Todo" },
+    { id: "ALL", name: "Todos" },
     { id: "WEB", name: "Web Apps" },
     { id: "SOFTWARE", name: "Software a Medida" },
     { id: "SAAS", name: "SaaS" },
