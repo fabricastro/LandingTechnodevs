@@ -10,22 +10,22 @@ import plans from "../data/plan.json";
     <div class="">
       <!-- Título y Selector -->
       <div class="max-w-2xl mx-auto text-center mb-16">
-        <span class="text-center text-xs text-white tracking-wider font-bold uppercase">Elige el Plan Ideal para Tu Negocio</span>
+        <span class="text-center text-xs text-white tracking-wider font-bold uppercase">Soluciones Tecnológicas Para Tu Negocio</span>
         <h2
           class="mt-6 mb-6 text-4xl lg:text-5xl font-bold font-heading text-primaryText"
         >
-          Nuestros planes
+          Nuestros Servicios
         </h2>
         <div class=" flex justify-center items-center mt-12 px-4 flex-col sm:flex-row gap-2 sm:gap-5 w-full">
           <button class="toggle-button active w-full max-w-[70%] lg:max-w-48" id="webToggle" data-type="web"
-            >Diseño Web</button
+            >Web Apps</button
           >
-          <button class="toggle-button w-full max-w-[70%] lg:max-w-48" id="socialToggle" data-type="social"
-            >Diseño Gráfico
+          <button class="toggle-button w-full max-w-[70%] lg:max-w-48" id="softwareToggle" data-type="software"
+            >Software a Medida
             </button
           >
-          <button class="toggle-button w-full max-w-[70%] lg:max-w-48" id="otherToggle" data-type="other"
-            >Otros Servicios
+          <button class="toggle-button w-full max-w-[70%] lg:max-w-48" id="saasToggle" data-type="saas"
+            >Plataformas SaaS
             </button
           >
         </div>
@@ -77,7 +77,7 @@ import plans from "../data/plan.json";
         <div
           class="inline-block px-6 mt-9 text-white text-3xl font-bold rounded-md cursor-default"
         >
-          Elige tu plan y contáctanos ahora
+          Transforma tu negocio con tecnología a medida
         </div>
       </div>
     </div>
@@ -87,14 +87,14 @@ import plans from "../data/plan.json";
 
 <script>
   const webToggle = document.getElementById("webToggle");
-  const socialToggle = document.getElementById("socialToggle");
-  const otherToggle = document.getElementById("otherToggle");
+  const softwareToggle = document.getElementById("softwareToggle");
+  const saasToggle = document.getElementById("saasToggle");
   const planCards = document.querySelectorAll(".plan-card");
 
   webToggle.addEventListener("click", () => {
     webToggle.classList.add("active");
-    socialToggle.classList.remove("active");
-    otherToggle.classList.remove("active");
+    softwareToggle.classList.remove("active");
+    saasToggle.classList.remove("active");
     planCards.forEach((card) => {
       if (card instanceof HTMLElement) {
         card.style.display = card.dataset.type === "web" ? "block" : "none";
@@ -102,24 +102,24 @@ import plans from "../data/plan.json";
     });
   });
 
-  socialToggle.addEventListener("click", () => {
-    socialToggle.classList.add("active");
+  softwareToggle.addEventListener("click", () => {
+    softwareToggle.classList.add("active");
     webToggle.classList.remove("active");
-    otherToggle.classList.remove("active");
+    saasToggle.classList.remove("active");
     planCards.forEach((card) => {
       if (card instanceof HTMLElement) {
-        card.style.display = card.dataset.type === "social" ? "block" : "none";
+        card.style.display = card.dataset.type === "software" ? "block" : "none";
       }
     });
   });
 
-  otherToggle.addEventListener("click", () => {
-    otherToggle.classList.add("active");
-    socialToggle.classList.remove("active");
+  saasToggle.addEventListener("click", () => {
+    saasToggle.classList.add("active");
+    softwareToggle.classList.remove("active");
     webToggle.classList.remove("active");
     planCards.forEach((card) => {
       if (card instanceof HTMLElement) {
-        card.style.display = card.dataset.type === "other" ? "block" : "none";
+        card.style.display = card.dataset.type === "saas" ? "block" : "none";
       }
     });
   });

@@ -31,92 +31,114 @@
   },
   {
     "type": "web",
-    "plan": "standard",
-    "title": "Tienda Online",
+    "plan": "premium",
+    "title": "Aplicación Web",
     "price": "Consultar",
     "description": "Desde",
     "features": [
-      "Catálogo autogestionable de productos.",
-      "Integración con pasarelas de pago (Mercado Pago, PayPal, etc.).",
-      "Gestión de inventario en tiempo real.",
-      "Diseño responsivo para dispositivos móviles.",
-      "SEO para productos y categorías."
+      "Desarrollo con tecnologías modernas (React, Node.js).",
+      "Base de datos personalizada y optimizada.",
+      "Sistema de autenticación y roles de usuario.",
+      "Panel de administración completo.",
+      "Integración con APIs externas.",
+      "Soporte y mantenimiento continuo."
     ],
-    "badge": "¡Aumenta tus ventas con una tienda 100% funcional!"
+    "badge": "¡Transforma tu negocio con tecnología a medida!"
   },
   {
-    "type": "social",
+    "type": "software",
     "plan": "basic",
-    "title": "Manual de Marca",
+    "title": "Sistema de Gestión",
     "price": "Consultar",
-    "description": "Construye la base de tu identidad visual.",
-    "features": [
-      "Diseño de logotipo y variantes.",
-      "Paleta de colores oficial.",
-      "Tipografías para impresos y digitales.",
-      "Guía de uso para mantener coherencia en tu marca.",
-      "Diseños que refuercen tu identidad visual."
-    ],
-    "badge": "¡Crea una identidad profesional!"
-  },
-  {
-    "type": "social",
-    "plan": "premium",
-    "title": "Contenido para Redes Sociales",
-    "price": "Consultar",
-    "description": "¡Impulsa tu presencia en redes con estilo!",
-    "features": [
-      "Plantillas gráficas personalizadas.",
-      "Optimización para diferentes plataformas (Instagram, Facebook, etc.).",
-      "Diseños que refuercen tu identidad visual.",
-      "Estrategias de publicación efectivas.",
-      "Contenido orientado a resultados."
-    ],
-    "badge": "¡Impulsa tu presencia en redes con estilo!"
-  },
-  {
-    "type": "other",
-    "plan": "basic",
-    "title": "PALTA",
-    "price": "Consultar",
-    "description": "Sistema de gestión empresarial.",
+    "description": "Automatiza procesos internos",
     "features": [
       "Gestión de clientes y proveedores.",
-      "Generación de presupuestos en PDF.",
-      "Envío directo de presupuestos por correo electrónico.",
+      "Generación de reportes automatizados.",
+      "Control de inventario en tiempo real.",
       "Gestión de usuarios con roles específicos.",
+      "Integración con sistemas existentes.",
       "Soporte técnico continuo."
     ],
-    "badge": "¡Optimiza tu administración en minutos!"
+    "badge": "¡Optimiza tu operación empresarial!"
   },
   {
-    "type": "other",
-    "plan": "basic",
-    "title": "Chatbot con IA",
+    "type": "software",
+    "plan": "standard",
+    "title": "Software a Medida",
     "price": "Consultar",
-    "description": "Desde",
+    "description": "Solución personalizada para tu negocio",
     "features": [
-      "Atención 24/7 con IA avanzada.",
-      "Respuestas rápidas y naturales.",
-      "Capacitado para resolver preguntas frecuentes.",
-      "Soporte para múltiples idiomas.",
-      "Automatización avanzada para mejorar eficiencia."
+      "Análisis profundo de procesos actuales.",
+      "Diseño de solución personalizada.",
+      "Desarrollo con estándares modernos.",
+      "Integración con sistemas existentes.",
+      "Capacitación del equipo.",
+      "Soporte y actualizaciones continuas."
     ],
-    "badge": "¡Reduce tiempos de espera y mejora la experiencia del cliente!"
+    "badge": "¡Tecnología que se adapta a tu negocio!"
   },
   {
-    "type": "other",
+    "type": "software",
     "plan": "premium",
-    "title": "Chatbot Atención Virtual",
+    "title": "Automatización Empresarial",
     "price": "Consultar",
-    "description": "Desde",
+    "description": "Automatiza tareas repetitivas",
     "features": [
-      "Brinda información sobre productos y servicios.",
-      "Guía a los usuarios en tiempo real.",
-      "Reduce la carga del personal de atención al cliente.",
-      "Fácil integración con múltiples plataformas.",
-      "Automatización para una atención rápida."
+      "Identificación de procesos automatizables.",
+      "Desarrollo de bots y scripts personalizados.",
+      "Integración con múltiples plataformas.",
+      "Dashboards de monitoreo en tiempo real.",
+      "Reducción de costos operativos.",
+      "ROI medible y documentado."
     ],
-    "badge": "¡Agiliza la atención y ahorra recursos!"
+    "badge": "¡Libera tiempo para lo que realmente importa!"
+  },
+  {
+    "type": "saas",
+    "plan": "basic",
+    "title": "MVP SaaS",
+    "price": "Consultar",
+    "description": "Convierte tu idea en producto",
+    "features": [
+      "Desarrollo de producto mínimo viable.",
+      "Sistema de suscripciones básico.",
+      "Panel de usuario y administración.",
+      "Arquitectura escalable desde el inicio.",
+      "Integración con pasarelas de pago.",
+      "Métricas y analytics básicos."
+    ],
+    "badge": "¡Valida tu idea en el mercado!"
+  },
+  {
+    "type": "saas",
+    "plan": "standard",
+    "title": "Plataforma SaaS",
+    "price": "Consultar",
+    "description": "Producto completo y escalable",
+    "features": [
+      "Funcionalidades completas del producto.",
+      "Múltiples planes de suscripción.",
+      "Sistema de facturación automatizado.",
+      "APIs para integraciones.",
+      "Soporte multiusuario avanzado.",
+      "Analytics avanzados y reportes."
+    ],
+    "badge": "¡Escala tu negocio digital!"
+  },
+  {
+    "type": "saas",
+    "plan": "premium",
+    "title": "Ecosistema SaaS",
+    "price": "Consultar",
+    "description": "Plataforma empresarial completa",
+    "features": [
+      "Múltiples módulos interconectados.",
+      "Marketplace de integraciones.",
+      "White-label para partners.",
+      "Arquitectura multi-tenant.",
+      "Soporte empresarial 24/7.",
+      "Escalabilidad global automática."
+    ],
+    "badge": "¡Domina tu mercado con tecnología avanzada!"
   }
 ]

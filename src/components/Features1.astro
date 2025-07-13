@@ -1,61 +1,52 @@
 ---
-import { TfiWorld } from "react-icons/tfi";
-import { CiMonitor } from "react-icons/ci";
-import { IoMdPhotos } from "react-icons/io";
 import feature1 from "../assets/images/image-innovation-2048x2048.webp";
-import feature2 from "../assets/images/cohete.webp";
+import feature2 from "../assets/images/saas.webp";
 import feature3 from "../assets/images/pc-ia.webp";
-import feature4 from "../assets/images/code.webp";
-import feature5 from "../assets/images/centerpadel.png";
+import feature4 from "../assets/images/mobile-app.webp";
 import { Image } from "astro:assets";
-import NetIcon from "./Icons/NetIcon.astro";
-import ScreenIcon from "./Icons/ScreenIcon.astro";
-import ImageIcon from "./Icons/ImageIcon.astro";
-import MetalCard from "./MetalCard.astro";
-
+import WebAppIcon from "./Icons/WebAppIcon.astro";
+import CustomSoftwareIcon from "./Icons/CustomSoftwareIcon.astro";
+import SaaSIcon from "./Icons/SaaSIcon.astro";
 ---
 
 <section class="w-full section-with-glow pt-7 md:pt-[12vw] lg:pt-16 z-20 relative">
   <div class="w-screen flex justify-center relative">
-<!--     <div class="mt-[-80px]">
-      <MetalCard></MetalCard>
-    </div> -->
     <div
       class="w-11/12  sm:w-4/5 lg:w-[90%] xl:w-[80%] 2xl:w-[1200px] mx-auto lg:grid gap-0 lg:gap-3 xl:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 z-10 rounded-xl lg:mt-[-150px] xl:mt-[-250px]"
       id="features"
     >
       
       <div
-        class="feature-card hover:cursor-pointer p-6 flex flex-col items-center gap-6 rounded-t-xl lg:rounded-3xl backdrop-blur-lg duration-300 ease-in-out lg:min-h-[350px] shadow-[0_0_50px_0_rgba(200,200,200,0.1)] bg-[#03041f] lg:bg-[rgba(200,200,200,0.2)] relative cursor-pointer transition opacity-0 transform translate-y-10 lg:border-[1px] lg:border-white/20" 
+        class="feature-card hover:cursor-pointer p-6 flex flex-col items-center gap-4 rounded-t-xl lg:rounded-3xl backdrop-blur-lg duration-300 ease-in-out lg:min-h-[300px] shadow-[0_0_50px_0_rgba(200,200,200,0.1)] bg-[#03041f] lg:bg-[rgba(200,200,200,0.2)] relative cursor-pointer transition opacity-0 transform translate-y-10 lg:border-[1px] lg:border-white/20" 
       >
-        <NetIcon />
+        <WebAppIcon />
         <h4 class="gradient-text text-2xl font-semibold text-center custom-shadow">
-          Desarrollo web
+          Web Apps
         </h4>
         <p class="text-primaryText text-center text-base hidden lg:flex">
-          Diseñamos sitios web modernos, rápidos y seguros. Nuestros desarrollos están optimizados para destacar en buscadores y ofrecer experiencias excepcionales a tus usuarios.
+          Desarrollamos aplicaciones web modernas y seguras, totalmente adaptadas a las necesidades de tu negocio. Soluciones escalables, integrables y optimizadas para brindar experiencias eficientes a tus usuarios.
         </p>
       </div>
       <div
-        class="feature-card hover:cursor-pointer p-6 flex flex-col items-center gap-6 lg:rounded-3xl lg:mt-12 backdrop-blur-lg duration-300 ease-in-out lg:min-h-[350px] lg:h-full shadow-[0_0_50px_0_rgba(200,200,200,0.1)] bg-[#03041f] lg:bg-[rgba(200,200,200,0.2)] relative cursor-pointer transition opacity-0 transform translate-y-10 lg:border-[1px] lg:border-white/20" 
+        class="feature-card hover:cursor-pointer p-6 flex flex-col items-center gap-4 lg:rounded-3xl lg:mt-12 backdrop-blur-lg duration-300 ease-in-out lg:min-h-[300px] lg:h-full shadow-[0_0_50px_0_rgba(200,200,200,0.1)] bg-[#03041f] lg:bg-[rgba(200,200,200,0.2)] relative cursor-pointer transition opacity-0 transform translate-y-10 lg:border-[1px] lg:border-white/20" 
       >
-          <ScreenIcon/>
+          <CustomSoftwareIcon/>
         <h4 class="gradient-text text-2xl font-semibold text-center custom-shadow">
-          Aplicaciones a Medida
+          Software a Medida
         </h4>
         <p class="text-primaryText text-center text-base hidden lg:flex">
-          Creamos software personalizado que se adapta a las necesidades específicas de tu negocio. Automatiza procesos, mejora la productividad y lleva tu empresa al siguiente nivel con nuestras aplicaciones web.
+          Creamos sistemas personalizados que se ajustan a tus procesos internos. Desde la automatización de tareas hasta el manejo de datos complejos, mejoramos tu operación con tecnología pensada exclusivamente para vos.
         </p>
       </div>
       <div
-        class="feature-card hover:cursor-pointer p-6 flex flex-col items-center gap-6 rounded-b-3xl lg:rounded-3xl backdrop-blur-lg duration-300 ease-in-out lg:min-h-[350px] shadow-[0_0_50px_0_rgba(200,200,200,0.1)] bg-[#03041f] lg:bg-[rgba(200,200,200,0.2)] relative cursor-pointer transition opacity-0 transform translate-y-10 lg:border-[1px] lg:border-white/20" 
+        class="feature-card hover:cursor-pointer p-6 flex flex-col items-center gap-4 rounded-b-3xl lg:rounded-3xl backdrop-blur-lg duration-300 ease-in-out lg:min-h-[300px] shadow-[0_0_50px_0_rgba(200,200,200,0.1)] bg-[#03041f] lg:bg-[rgba(200,200,200,0.2)] relative cursor-pointer transition opacity-0 transform translate-y-10 lg:border-[1px] lg:border-white/20" 
       >
-        <ImageIcon />
+        <SaaSIcon />
         <h4 class="gradient-text text-2xl font-semibold text-center custom-shadow">
-          Gestión de Redes Sociales
+          SaaS
         </h4>
         <p class="text-primaryText text-center text-base hidden lg:flex">
-          Impulsa tu marca con estrategias efectivas en redes sociales. Aumenta tu visibilidad, conecta con tu audiencia y genera un impacto auténtico que convierta seguidores en clientes.
+          Convertimos ideas en plataformas digitales rentables. Diseñamos y desarrollamos soluciones SaaS listas para escalar, con gestión de usuarios, suscripciones y funcionalidades robustas desde el día uno.
         </p>
       </div>
     </div>
@@ -69,13 +60,13 @@ import MetalCard from "./MetalCard.astro";
       <div class="mx-auto lg:mx-auto w-11/12 sm:w-4/5 md:w-3/4 lg:w-unset">
         <span class="block-subtitle">Abrazando la Innovación</span>
         <h2 class="mt-6 mb-8 text-4xl lg:text-4xl block-big-title">
-          Expertos en Transformación Digital
+          Impulsamos tu transformación digital
         </h2>
-        <p class="mb-10 text-secondaryText leading-loose">
-          La vida ha dado un giro hacia la digitalización, creando una inteligencia artificial más avanzada de lo que jamás imaginamos. Los canales de venta han cambiado, las relaciones se han transformado, el trabajo se ha redefinido y la tecnología avanza a pasos agigantados. Nada es como antes; la publicidad ya no es lo único.
+        <p class="mb-3 text-secondaryText leading-loose">
+          La tecnología evoluciona a gran velocidad: los procesos cambian, los canales de venta se digitalizan y la inteligencia artificial redefine cómo trabajamos. En este nuevo contexto, las empresas necesitan más que visibilidad: necesitan eficiencia, automatización y escalabilidad.
         </p>
-        <p class="mb-10 text-secondaryText leading-loose">
-          En este nuevo escenario, surge Technodevs, estamos aquí para ayudarte a explorar las infinitas oportunidades del universo digital, construir una identidad visual poderosa y destacar entre las demás empresas. Somos únicos y nuestra forma de trabajar también lo es. No solo seguimos tendencias, las creamos, siempre enfocados en generar un impacto significativo.
+        <p class="mb-6 text-secondaryText leading-loose">
+          En Technodevs, desarrollamos software a medida, plataformas SaaS y aplicaciones web que acompañan ese cambio. No solo entendemos la transformación digital: la diseñamos, la construimos y la hacemos funcionar para tu negocio.
         </p>
         <div class="flex flex-col items-center lg:items-start max-w-[40rem] gap-10 lg:gap-2 self-end sm:gap-4 sm:self-auto  custom-shadow z-20 h-full justify-center">
           <a href="https://wa.me/+5492646270803" target="_blank"

@@ -3,29 +3,29 @@ import { motion } from "framer-motion";
 
 const FAQData = [
   {
-    question: "¿A medida que trabajan en mi nueva web, puedo ver avances?",
+    question: "¿Cómo funciona el proceso de desarrollo de software a medida?",
     answer:
-      "¡Por supuesto! En Technodevs mantenemos una comunicación abierta durante todo el proceso. Te compartimos actualizaciones periódicas para que puedas ver los avances y aportar tus comentarios en cada etapa.",
+      "Nuestro proceso comienza con un análisis profundo de tus procesos y necesidades. Luego diseñamos una solución personalizada, desarrollamos con metodologías ágiles y te mantenemos informado en cada sprint. Incluye pruebas, capacitación e implementación gradual.",
   },
   {
     question: "¿En qué área geográfica proveen servicios?",
     answer:
-      "Trabajamos con clientes de cualquier parte del mundo. Gracias a herramientas digitales, podemos colaborar contigo sin importar tu ubicación geográfica.",
+      "Trabajamos con clientes de cualquier parte del mundo. Nuestro equipo está capacitado para colaborar de forma remota utilizando herramientas modernas de desarrollo y comunicación, garantizando la misma calidad sin importar tu ubicación.",
   },
   {
-    question: "¿Realizan modificaciones sobre sitios web existentes?",
+    question: "¿Pueden integrar el nuevo software con nuestros sistemas existentes?",
     answer:
-      "Sí, realizamos rediseños y mejoras en sitios web ya existentes. Analizamos tu página actual y te proponemos las mejores soluciones para modernizarla, optimizar su rendimiento y adaptarla a tus necesidades.",
+      "Absolutamente. Especializamos en integraciones complejas. Analizamos tu infraestructura actual y desarrollamos APIs y conectores que permiten que el nuevo software se comunique seamlessly con tus sistemas existentes, bases de datos y herramientas.",
   },
   {
-    question: "¿Cuánto tiempo lleva disponer de mi nueva página web?",
+    question: "¿Cuánto tiempo lleva desarrollar una solución de software completa?",
     answer:
-      "El tiempo depende de la complejidad del proyecto. Una landing page puede estar lista en 1-2 semanas, mientras que un sitio más completo puede tomar entre 3 y 6 semanas. Siempre te brindamos un cronograma detallado antes de iniciar.",
+      "Los tiempos varían según la complejidad: un MVP puede estar listo en 4-8 semanas, un sistema de gestión completo en 3-6 meses, y una plataforma SaaS en 6-12 meses. Siempre proporcionamos cronogramas detallados y entregas incrementales.",
   },
   {
-    question: "Ya tengo una web y quisiera transformarla en autoadministrable… ¿es posible?",
+    question: "¿Ofrecen soporte y mantenimiento después del desarrollo?",
     answer:
-      "¡Claro que sí! Podemos adaptar tu sitio actual a un sistema autoadministrable (como WordPress), para que puedas actualizar su contenido de manera sencilla y sin conocimientos técnicos avanzados.",
+      "Sí, incluimos soporte técnico continuo, actualizaciones de seguridad, nuevas funcionalidades y escalabilidad. Nuestro objetivo es que tu software evolucione con tu negocio y se mantenga siempre optimizado y seguro.",
   },
 ];
 
